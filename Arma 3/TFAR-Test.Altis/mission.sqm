@@ -22,7 +22,10 @@ class Mission
 		"A3_Structures_F_EPC_Items_Electronics",
 		"A3_Characters_F_Civil",
 		"A3_Structures_F_Civ_Market",
-		"A3_Structures_F_Mil_BagBunker"
+		"A3_Structures_F_Mil_BagBunker",
+		"A3_Structures_F_Mil_Flags",
+		"A3_Structures_F_Civ_Camping",
+		"A3_Structures_F_Mil_BagFence"
 	};
 	addOnsAuto[]=
 	{
@@ -44,6 +47,9 @@ class Mission
 		"A3_Structures_F_EPC_Items_Electronics",
 		"A3_Structures_F_Civ_Market",
 		"A3_Structures_F_Mil_BagBunker",
+		"A3_Structures_F_Mil_Flags",
+		"A3_Structures_F_Civ_Camping",
+		"A3_Structures_F_Mil_BagFence",
 		"a3_map_altis"
 	};
 	randomSeed=812140;
@@ -510,7 +516,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=31;
+		items=46;
 		class Item0
 		{
 			position[]={20562.748,47.636295,20092.896};
@@ -829,6 +835,141 @@ class Mission
 			id=50;
 			side="EMPTY";
 			vehicle="Land_BagBunker_Small_F";
+			skill=0.60000002;
+		};
+		class Item31
+		{
+			position[]={21265.576,7.8487206,15234.502};
+			id=51;
+			side="EMPTY";
+			vehicle="Flag_AAF_F";
+			skill=0.60000002;
+		};
+		class Item32
+		{
+			position[]={21254.498,7.3616505,15230.944};
+			id=52;
+			side="EMPTY";
+			vehicle="Land_Ground_sheet_F";
+			skill=0.60000002;
+		};
+		class Item33
+		{
+			position[]={21256.711,7.3465261,15230.945};
+			id=53;
+			side="EMPTY";
+			vehicle="Land_Ground_sheet_F";
+			skill=0.60000002;
+		};
+		class Item34
+		{
+			position[]={21252.283,7.3204441,15230.945};
+			id=54;
+			side="EMPTY";
+			vehicle="Land_Ground_sheet_F";
+			skill=0.60000002;
+		};
+		class Item35
+		{
+			position[]={21250.074,7.278955,15230.943};
+			id=55;
+			side="EMPTY";
+			vehicle="Land_Ground_sheet_F";
+			skill=0.60000002;
+		};
+		class Item36
+		{
+			position[]={21257.744,7.3583031,15230.925};
+			azimut=-90.508301;
+			id=56;
+			side="EMPTY";
+			vehicle="Land_BagFence_Short_F";
+			skill=0.60000002;
+			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
+		};
+		class Item37
+		{
+			position[]={21257.734,7.610724,15232.525};
+			azimut=-90.508301;
+			id=57;
+			side="EMPTY";
+			vehicle="Land_BagFence_End_F";
+			skill=0.60000002;
+		};
+		class Item38
+		{
+			position[]={21255.65,7.3571391,15230.925};
+			azimut=-90.508301;
+			id=58;
+			side="EMPTY";
+			vehicle="Land_BagFence_Short_F";
+			skill=0.60000002;
+			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
+		};
+		class Item39
+		{
+			position[]={21255.641,7.5800014,15232.525};
+			azimut=-90.508301;
+			id=59;
+			side="EMPTY";
+			vehicle="Land_BagFence_End_F";
+			skill=0.60000002;
+		};
+		class Item40
+		{
+			position[]={21253.438,7.3488917,15231};
+			azimut=-90.508301;
+			id=60;
+			side="EMPTY";
+			vehicle="Land_BagFence_Short_F";
+			skill=0.60000002;
+			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
+		};
+		class Item41
+		{
+			position[]={21253.428,7.545145,15232.601};
+			azimut=-90.508301;
+			id=61;
+			side="EMPTY";
+			vehicle="Land_BagFence_End_F";
+			skill=0.60000002;
+		};
+		class Item42
+		{
+			position[]={21251.268,7.3087401,15231.002};
+			azimut=-90.508301;
+			id=62;
+			side="EMPTY";
+			vehicle="Land_BagFence_Short_F";
+			skill=0.60000002;
+			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
+		};
+		class Item43
+		{
+			position[]={21251.258,7.5047226,15232.603};
+			azimut=-90.508301;
+			id=63;
+			side="EMPTY";
+			vehicle="Land_BagFence_End_F";
+			skill=0.60000002;
+		};
+		class Item44
+		{
+			position[]={21248.938,7.2606492,15230.961};
+			azimut=-90.508301;
+			id=64;
+			side="EMPTY";
+			vehicle="Land_BagFence_Short_F";
+			skill=0.60000002;
+			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
+		};
+		class Item45
+		{
+			position[]={21248.928,7.4593997,15232.562};
+			azimut=-90.508301;
+			id=65;
+			side="EMPTY";
+			vehicle="Land_BagFence_End_F";
 			skill=0.60000002;
 		};
 	};
