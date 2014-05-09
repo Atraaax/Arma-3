@@ -21,6 +21,7 @@ class CfgFunctions {
 			class funkeklein {};
 			class funkegross {};
 			class teleport {};
+			class remove_weapon {};
 		};
 	};
 };
