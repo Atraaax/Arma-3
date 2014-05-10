@@ -426,13 +426,14 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={21256.299,7.7404685,15239.281};
-					azimut=183.01224;
+					position[]={20576.119,50.990723,20111.867};
+					azimut=467.659;
 					id=15;
 					side="EAST";
 					vehicle="O_Soldier_F";
 					player="PLAYER COMMANDER";
 					leader=1;
+					rank="COLONEL";
 					skill=0.60000002;
 					init="removeallweapons this;removebackpack this; this removeItem ""itemradio"";";
 				};
@@ -486,9 +487,8 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={3726.7993,18.874357,12977.565};
-					azimut=-267.45096;
-					offsetY=19;
+					position[]={4047.3943,118.17287,14458.014};
+					azimut=-267.45099;
 					id=18;
 					side="CIV";
 					vehicle="C_man_p_fugitive_F_afro";
@@ -533,6 +533,8 @@ class Mission
 			vehicle="O_MRAP_02_F";
 			lock="LOCKEDPLAYER";
 			skill=0.60000002;
+			text="V1";
+			init="this addAction [""Unlock"", TFRT_fnc_col_unlock];";
 		};
 		class Item1
 		{
@@ -544,28 +546,34 @@ class Mission
 			vehicle="O_MRAP_02_F";
 			lock="LOCKEDPLAYER";
 			skill=0.60000002;
+			text="V2";
+			init="this addAction [""Unlock"", TFRT_fnc_col_unlock];";
 		};
 		class Item2
 		{
 			position[]={20580.943,51.225746,20109.566};
-			azimut=224.42162;
+			azimut=224.422;
 			special="NONE";
 			id=22;
 			side="EMPTY";
 			vehicle="O_Quadbike_01_F";
 			lock="LOCKEDPLAYER";
 			skill=0.60000002;
+			text="V4";
+			init="this addAction [""Unlock"", TFRT_fnc_col_unlock];";
 		};
 		class Item3
 		{
 			position[]={20579.354,51.18251,20111.129};
-			azimut=224.42162;
+			azimut=224.422;
 			special="NONE";
 			id=23;
 			side="EMPTY";
 			vehicle="O_Quadbike_01_F";
 			lock="LOCKEDPLAYER";
 			skill=0.60000002;
+			text="V3";
+			init="this addAction [""Unlock"", TFRT_fnc_col_unlock];";
 		};
 		class Item4
 		{
@@ -576,6 +584,8 @@ class Mission
 			vehicle="Land_HelipadCircle_F";
 			lock="LOCKEDPLAYER";
 			skill=0.60000002;
+			text="V5";
+			init="this addAction [""Unlock"", TFRT_fnc_col_unlock];";
 		};
 		class Item5
 		{
@@ -601,13 +611,15 @@ class Mission
 		class Item7
 		{
 			position[]={20597.295,47.21648,20072.588};
-			azimut=182.82683;
+			azimut=182.827;
 			special="NONE";
 			id=27;
 			side="EMPTY";
 			vehicle="O_Heli_Light_02_unarmed_F";
 			lock="LOCKEDPLAYER";
 			skill=0.60000002;
+			text="V6";
+			init="this addAction [""Unlock"", TFRT_fnc_col_unlock];";
 		};
 		class Item8
 		{
@@ -619,6 +631,8 @@ class Mission
 			vehicle="B_Heli_Attack_01_F";
 			lock="LOCKEDPLAYER";
 			skill=0.60000002;
+			text="V7";
+			init="this addAction [""Unlock"", TFRT_fnc_col_unlock];";
 		};
 		class Item9
 		{
@@ -652,9 +666,8 @@ class Mission
 		};
 		class Item12
 		{
-			position[]={3735.2373,18.863886,12979.585};
+			position[]={4055.8323,117.92445,14460.033};
 			azimut=311.22601;
-			offsetY=39;
 			id=32;
 			side="EMPTY";
 			vehicle="Land_HelipadEmpty_F";
@@ -786,9 +799,8 @@ class Mission
 		};
 		class Item25
 		{
-			position[]={3725.0354,18.876764,12977.607};
+			position[]={4045.6304,118.15216,14458.056};
 			azimut=-90.031601;
-			offsetY=19;
 			id=45;
 			side="EMPTY";
 			vehicle="Land_WoodenCart_F";
@@ -1177,7 +1189,7 @@ class Mission
 		};
 		class Item4
 		{
-			position[]={3730.3533,18.874844,12978.632};
+			position[]={4050.9482,118.26072,14459.08};
 			name="18km";
 			text="18km";
 			markerType="ELLIPSE";
