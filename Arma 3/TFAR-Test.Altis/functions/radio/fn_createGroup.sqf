@@ -1,10 +1,8 @@
 //create group of 3 soldiers for shooting range
 private ["_group","_soldier","_position"];
 
-_position = [_this, 0, [0,0,0], [[]]] call BIS_fnc_param;
-
-//create group
-_group = createGroup west;
+_group = [_this, 0, grpNull, [grpNull]] call BIS_fnc_param;
+_position = [_this, 1, [0,0,0], [[]]] call BIS_fnc_param;
 
 // Create units
 for [{_x = 0}, {_x < 3}, {_x = _x + 1}] do {
@@ -26,6 +24,8 @@ for [{_x = 0}, {_x < 3}, {_x = _x + 1}] do {
 	_x disableAI "TARGET";
 	_x disableAI "AUTOTARGET";
 } forEach (units _group);
+
+//_group selectLeader ((units _group) select 0);
 
 sleep 120;
 

@@ -25,6 +25,7 @@ class CfgFunctions {
 			class col_unlock {};
 			class createGroup {};
 			class spawnUnit {};
+			class changeBehaviour {};
 		};
 	};
 };
