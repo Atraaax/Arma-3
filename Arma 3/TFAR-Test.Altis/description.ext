@@ -23,6 +23,8 @@ class CfgFunctions {
 			class teleport {};
 			class remove_weapon {};
 			class col_unlock {};
+			class createGroup {};
+			class spawnUnit {};
 		};
 	};
 };
