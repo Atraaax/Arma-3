@@ -2,6 +2,7 @@
 
 private ["_player"];
 
+hint "remove weapon";
 //get playername
 _player = [_this, 1, player, [objNull]] call BIS_fnc_param;
 

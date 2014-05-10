@@ -1,0 +1,11 @@
+<01:06:19> "Fank": _player = [_this, 1, player, [objNull]] call BIS_fnc_param;
+<01:07:13> "Fank": https://community.bistudio.com/wiki/removeAllWeapons
+<01:08:45> "Fank": player addEventHandler ["Respawn", BGD_fnc_localRespawn];
+<01:09:16> "Fank": //removeVest _unit;
+//removeBackpack _unit;
+
+removeAllWeapons _unit;
+
+_unit unassignItem "NVGoggles";
+_unit removeItem "NVGoggles";
+<01:09:39> "Fank": init="[this] call BGD_fnc_localRespawn;";

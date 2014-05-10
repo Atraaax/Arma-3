@@ -17,5 +17,3 @@ hint "1";
 sleep 1;
 hint "Bubba hat guten Weg gefunden.";
 _caller setPos (getPos (_dest));
-
-
