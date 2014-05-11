@@ -1,6 +1,6 @@
 //spawn group on given position
 
-private ["_mod","_wp","_group","_trig","_behaviorHandle"];
+private ["_mod","_wp","_group","_trig","_behaviorHandle","_rdmdir"];
 
 //get position modification
 _mod = [_this, 3, 0, [0]] call BIS_fnc_param;
@@ -15,19 +15,24 @@ sleep 1;
 hint "2";
 sleep 1;
 hint "1";
+sleep 1;
+hint "Feuer frei";
+
+//generate random number for change of direction
+_rdmdir = round (random 1);
 
 //spawn group in given location depending on distance choice
-[_group, [21150,15134 - _mod,0]] spawn TFRT_fnc_createGroup;
+[_group, [(if (_rdmdir > 0) then {21150} else {21350}),15134 - _mod,0]] spawn TFRT_fnc_createGroup;
 
 sleep 2;
 
 //create waypoint for group
-_wpPos = [21150 + 200, 15134 - _mod, 0];
+_wpPos = [(if (_rdmdir > 0) then {21350} else {21150}), 15134 - _mod, 0];
 _wp = _group addwaypoint [_wpPos,5];
 
 
-//change behaviour until WP reached (deactivated for testing purpose)
-//_behaviorHandle = [_group] spawn TFRT_fnc_changeBehaviour;
+//change behaviour until WP reached (activated for testing purpose)
+_behaviorHandle = [_group] spawn TFRT_fnc_changeBehaviour;
 
 //kill group when WP is reached
 waitUntil {
@@ -40,7 +45,7 @@ waitUntil {
 	_return;
 };
 
-//terminate _behaviorHandle;
+terminate _behaviorHandle;
 
 //kill group
 {

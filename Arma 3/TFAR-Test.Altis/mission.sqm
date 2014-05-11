@@ -1441,9 +1441,10 @@ class Mission
 			offsetY=-1;
 			id=110;
 			side="EMPTY";
-			vehicle="TargetP_Zom_Acc1_F";
+			vehicle="TargetP_Inf_NoPop_F";
 			skill=0.60000002;
 			text="pop100_1";
+			init="this animate[""terc"",0]; this addEventHandler [""hit"",{_this spawn TFRT_fnc_popupTargets;0}];";
 		};
 		class Item91
 		{
@@ -1452,9 +1453,10 @@ class Mission
 			offsetY=-1;
 			id=111;
 			side="EMPTY";
-			vehicle="TargetP_Zom_Acc1_F";
+			vehicle="TargetP_Inf_NoPop_F";
 			skill=0.60000002;
 			text="pop100_2";
+			init="this animate[""terc"",0]; this addEventHandler [""hit"",{_this spawn TFRT_fnc_popupTargets;0}];";
 		};
 		class Item92
 		{
@@ -1463,9 +1465,10 @@ class Mission
 			offsetY=-1;
 			id=112;
 			side="EMPTY";
-			vehicle="TargetP_Zom_Acc1_F";
+			vehicle="TargetP_Inf_NoPop_F";
 			skill=0.60000002;
 			text="pop100_3";
+			init="this animate[""terc"",0]; this addEventHandler [""hit"",{_this spawn TFRT_fnc_popupTargets;0}];";
 		};
 		class Item93
 		{
@@ -1474,9 +1477,10 @@ class Mission
 			offsetY=-1;
 			id=113;
 			side="EMPTY";
-			vehicle="TargetP_Zom_Acc1_F";
+			vehicle="TargetP_Inf_NoPop_F";
 			skill=0.60000002;
 			text="pop100_4";
+			init="this animate[""terc"",0]; this addEventHandler [""hit"",{_this spawn TFRT_fnc_popupTargets;0}];";
 		};
 		class Item94
 		{
@@ -1485,9 +1489,10 @@ class Mission
 			offsetY=-1;
 			id=114;
 			side="EMPTY";
-			vehicle="TargetP_Zom_Acc1_F";
+			vehicle="TargetP_Inf_NoPop_F";
 			skill=0.60000002;
 			text="pop100_5";
+			init="this animate[""terc"",0]; this addEventHandler [""hit"",{_this spawn TFRT_fnc_popupTargets;0}];";
 		};
 		class Item95
 		{
@@ -1496,9 +1501,10 @@ class Mission
 			offsetY=-1;
 			id=115;
 			side="EMPTY";
-			vehicle="TargetP_Zom_Acc1_F";
+			vehicle="TargetP_Inf_NoPop_F";
 			skill=0.60000002;
 			text="pop150_1";
+			init="this animate[""terc"",0]; this addEventHandler [""hit"",{_this spawn TFRT_fnc_popupTargets;0}];";
 		};
 		class Item96
 		{
@@ -1507,9 +1513,10 @@ class Mission
 			offsetY=-1;
 			id=116;
 			side="EMPTY";
-			vehicle="TargetP_Zom_Acc1_F";
+			vehicle="TargetP_Inf_NoPop_F";
 			skill=0.60000002;
 			text="pop150_2";
+			init="this animate[""terc"",0]; this addEventHandler [""hit"",{_this spawn TFRT_fnc_popupTargets;0}];";
 		};
 		class Item97
 		{
@@ -1518,9 +1525,10 @@ class Mission
 			offsetY=-1;
 			id=117;
 			side="EMPTY";
-			vehicle="TargetP_Zom_Acc1_F";
+			vehicle="TargetP_Inf_NoPop_F";
 			skill=0.60000002;
 			text="pop150_3";
+			init="this animate[""terc"",0]; this addEventHandler [""hit"",{_this spawn TFRT_fnc_popupTargets;0}];";
 		};
 		class Item98
 		{
@@ -1529,10 +1537,10 @@ class Mission
 			offsetY=-1;
 			id=118;
 			side="EMPTY";
-			vehicle="TargetP_Zom_Acc1_F";
+			vehicle="TargetP_Inf_NoPop_F";
 			skill=0.60000002;
 			text="pop50_1";
-			init="this animate[""terc"",0]; this addEventHandler [""hit"",(_this select 0) spawn TFRT_fnc_popupTargets];";
+			init="this animate[""terc"",0]; this addEventHandler [""hit"",{_this spawn TFRT_fnc_popupTargets;0}];";
 		};
 		class Item99
 		{
@@ -1541,9 +1549,10 @@ class Mission
 			offsetY=-1;
 			id=119;
 			side="EMPTY";
-			vehicle="TargetP_Zom_Acc1_F";
+			vehicle="TargetP_Inf_NoPop_F";
 			skill=0.60000002;
 			text="pop50_2";
+			init="this animate[""terc"",0]; this addEventHandler [""hit"",{_this spawn TFRT_fnc_popupTargets;0}];";
 		};
 		class Item100
 		{
@@ -1552,9 +1561,10 @@ class Mission
 			offsetY=-1;
 			id=120;
 			side="EMPTY";
-			vehicle="TargetP_Zom_Acc1_F";
+			vehicle="TargetP_Inf_NoPop_F";
 			skill=0.60000002;
 			text="pop50_3";
+			init="this animate[""terc"",0]; this addEventHandler [""hit"",{_this spawn TFRT_fnc_popupTargets;0}];";
 		};
 		class Item101
 		{
@@ -1563,9 +1573,10 @@ class Mission
 			offsetY=-1;
 			id=121;
 			side="EMPTY";
-			vehicle="TargetP_Zom_Acc1_F";
+			vehicle="TargetP_Inf_NoPop_F";
 			skill=0.60000002;
 			text="pop50_4";
+			init="this animate[""terc"",0]; this addEventHandler [""hit"",{_this spawn TFRT_fnc_popupTargets;0}];";
 		};
 		class Item102
 		{
@@ -1574,9 +1585,10 @@ class Mission
 			offsetY=-1;
 			id=122;
 			side="EMPTY";
-			vehicle="TargetP_Zom_Acc1_F";
+			vehicle="TargetP_Inf_NoPop_F";
 			skill=0.60000002;
 			text="pop50_5";
+			init="this animate[""terc"",0]; this addEventHandler [""hit"",{_this spawn TFRT_fnc_popupTargets;0}];";
 		};
 	};
 	class Markers

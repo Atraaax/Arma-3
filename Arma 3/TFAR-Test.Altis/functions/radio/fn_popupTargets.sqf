@@ -1,12 +1,13 @@
 //Popup target behaviour
-private ["_target"];
+private ["_target","_timer"];
 
 //get target name
-_target = [_this, 0, onjNull, [obJNull]] call BIS_fnc_param;
-diag_log _target; 
+_target = [_this, 0, objNull, [objNull]] call BIS_fnc_param;
+
+_target animate ["terc",1];
 
 //randomize time for popup
-_x = floor (random 3) +3;
-diag_log _x; 
-sleep _x;
+_timer = (floor (random 4)) +3;
+sleep _timer;
+//pop target up
 _target animate ["terc",0];

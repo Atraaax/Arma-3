@@ -27,7 +27,7 @@ for [{_x = 0}, {_x < 3}, {_x = _x + 1}] do {
 
 //_group selectLeader ((units _group) select 0);
 
-sleep 120;
+sleep 60;
 
 //delete group when killed
 if (!isNull _group) then {
