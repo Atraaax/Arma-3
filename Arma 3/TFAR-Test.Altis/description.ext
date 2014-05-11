@@ -26,6 +26,7 @@ class CfgFunctions {
 			class createGroup {};
 			class spawnUnit {};
 			class changeBehaviour {};
+			class popupTargets {};
 		};
 	};
 };

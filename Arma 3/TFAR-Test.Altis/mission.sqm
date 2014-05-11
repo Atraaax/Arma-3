@@ -28,7 +28,8 @@ class Mission
 		"A3_Structures_F_Mil_Fortification",
 		"A3_Weapons_F_Beta_Ammoboxes",
 		"A3_Weapons_F_Ammoboxes",
-		"A3_Structures_F_Training"
+		"A3_Structures_F_Training",
+		"A3_Structures_F_Mil_Shelters"
 	};
 	addOnsAuto[]=
 	{
@@ -56,6 +57,7 @@ class Mission
 		"a3_weapons_f_beta_ammoboxes",
 		"A3_Structures_F_Mil_BagFence",
 		"A3_Structures_F_Training",
+		"A3_Structures_F_Mil_Shelters",
 		"a3_map_altis"
 	};
 	randomSeed=812140;
@@ -426,8 +428,8 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={21259.414,7.8410902,15241.306};
-					azimut=527.14392;
+					position[]={21266.281,8.1998825,15244.126};
+					azimut=419.32889;
 					id=15;
 					side="EAST";
 					vehicle="O_Soldier_F";
@@ -522,7 +524,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=83;
+		items=103;
 		class Item0
 		{
 			position[]={20562.748,47.636295,20092.896};
@@ -808,7 +810,7 @@ class Mission
 		};
 		class Item26
 		{
-			position[]={21249.25,7.9163709,15241.802};
+			position[]={21259.256,8.0507984,15245.253};
 			azimut=311.22601;
 			id=46;
 			side="EMPTY";
@@ -874,7 +876,7 @@ class Mission
 		};
 		class Item33
 		{
-			position[]={21273.906,8.1504784,15245.604};
+			position[]={21279.801,8.6239929,15252.933};
 			azimut=450.65442;
 			id=53;
 			side="EMPTY";
@@ -892,7 +894,7 @@ class Mission
 		};
 		class Item35
 		{
-			position[]={21269.633,8.2596245,15247.037};
+			position[]={21275.449,8.1149044,15247.037};
 			azimut=360.14453;
 			id=55;
 			side="EMPTY";
@@ -931,165 +933,167 @@ class Mission
 		};
 		class Item39
 		{
-			position[]={21257.434,7.590044,15232.401};
+			position[]={21257.473,7.7285323,15237.972};
 			azimut=-90.508301;
 			id=59;
-			side="EMPTY";
-			vehicle="Land_BagFence_Short_F";
-			skill=0.60000002;
-			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
-		};
-		class Item40
-		{
-			position[]={21257.426,7.6826563,15235.899};
-			azimut=-90.508301;
-			id=60;
 			side="EMPTY";
 			vehicle="Land_BagFence_End_F";
 			skill=0.60000002;
 		};
+		class Item40
+		{
+			position[]={21255.527,7.620759,15234.396};
+			azimut=179.255;
+			offsetY=-1;
+			id=60;
+			side="EMPTY";
+			vehicle="ShootingPos_F";
+			skill=0.60000002;
+			init="this setPos [getPos this select 0, getPos this select 1, -0.01]; this setVectorUp [0,0.1,1]; this setVectorUp surfaceNormal position this; ";
+		};
 		class Item41
 		{
-			position[]={21257.434,7.6483421,15234.38};
-			azimut=-90.508301;
+			position[]={21257.516,7.6167979,15232.936};
+			azimut=-90.794296;
 			id=61;
 			side="EMPTY";
-			vehicle="Land_BagFence_Short_F";
+			vehicle="Land_BagFence_Long_F";
 			skill=0.60000002;
 			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
 		};
 		class Item42
 		{
-			position[]={21247.424,7.481019,15233.586};
-			azimut=179.255;
-			offsetY=-1;
+			position[]={21257.482,7.6864977,15236.032};
+			azimut=-90.794296;
 			id=62;
 			side="EMPTY";
-			vehicle="ShootingPos_F";
+			vehicle="Land_BagFence_Long_F";
 			skill=0.60000002;
-			init="this setPos [getPos this select 0, getPos this select 1, -0.01]; this setVectorUp [0,0.1,1]; this setVectorUp surfaceNormal position this; ";
+			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
 		};
 		class Item43
 		{
-			position[]={21253.516,7.6165385,15234.378};
+			position[]={21253.285,7.6977124,15237.932};
 			azimut=-90.508301;
 			id=63;
-			side="EMPTY";
-			vehicle="Land_BagFence_Short_F";
-			skill=0.60000002;
-			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
-		};
-		class Item44
-		{
-			position[]={21253.516,7.5346975,15232.439};
-			azimut=-90.508301;
-			id=64;
-			side="EMPTY";
-			vehicle="Land_BagFence_Short_F";
-			skill=0.60000002;
-			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
-		};
-		class Item45
-		{
-			position[]={21253.508,7.6519194,15235.938};
-			azimut=-90.508301;
-			id=65;
 			side="EMPTY";
 			vehicle="Land_BagFence_End_F";
 			skill=0.60000002;
 		};
-		class Item46
+		class Item44
 		{
-			position[]={21255.488,7.6017613,15233.584};
+			position[]={21251.34,7.5834436,15234.356};
 			azimut=179.255;
 			offsetY=-1;
-			id=66;
+			id=64;
 			side="EMPTY";
 			vehicle="ShootingPos_F";
 			skill=0.60000002;
 			init="this setPos [getPos this select 0, getPos this select 1, -0.01]; this setVectorUp [0,0.1,1]; this setVectorUp surfaceNormal position this; ";
 		};
+		class Item45
+		{
+			position[]={21253.328,7.5562711,15232.896};
+			azimut=-90.794296;
+			id=65;
+			side="EMPTY";
+			vehicle="Land_BagFence_Long_F";
+			skill=0.60000002;
+			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
+		};
+		class Item46
+		{
+			position[]={21253.295,7.6537147,15235.992};
+			azimut=-90.794296;
+			id=66;
+			side="EMPTY";
+			vehicle="Land_BagFence_Long_F";
+			skill=0.60000002;
+			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
+		};
 		class Item47
 		{
-			position[]={21249.441,7.547194,15234.339};
+			position[]={21249.324,7.7013855,15237.893};
 			azimut=-90.508301;
 			id=67;
-			side="EMPTY";
-			vehicle="Land_BagFence_Short_F";
-			skill=0.60000002;
-			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
-		};
-		class Item48
-		{
-			position[]={21249.441,7.4536085,15232.4};
-			azimut=-90.508301;
-			id=68;
-			side="EMPTY";
-			vehicle="Land_BagFence_Short_F";
-			skill=0.60000002;
-			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
-		};
-		class Item49
-		{
-			position[]={21249.434,7.6156998,15235.898};
-			azimut=-90.508301;
-			id=69;
 			side="EMPTY";
 			vehicle="Land_BagFence_End_F";
 			skill=0.60000002;
 		};
+		class Item48
+		{
+			position[]={21247.379,7.5151582,15234.317};
+			azimut=179.255;
+			offsetY=-1;
+			id=68;
+			side="EMPTY";
+			vehicle="ShootingPos_F";
+			skill=0.60000002;
+			init="this setPos [getPos this select 0, getPos this select 1, -0.01]; this setVectorUp [0,0.1,1]; this setVectorUp surfaceNormal position this; ";
+		};
+		class Item49
+		{
+			position[]={21249.367,7.4805737,15232.856};
+			azimut=-90.794296;
+			id=69;
+			side="EMPTY";
+			vehicle="Land_BagFence_Long_F";
+			skill=0.60000002;
+			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
+		};
 		class Item50
 		{
-			position[]={21245.332,7.5839562,15234.298};
-			azimut=-90.508301;
+			position[]={21249.334,7.6162367,15235.953};
+			azimut=-90.794296;
 			id=70;
 			side="EMPTY";
-			vehicle="Land_BagFence_Short_F";
+			vehicle="Land_BagFence_Long_F";
 			skill=0.60000002;
 			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
 		};
 		class Item51
 		{
-			position[]={21245.332,7.4014511,15232.359};
+			position[]={21245.254,7.7598267,15237.818};
 			azimut=-90.508301;
 			id=71;
-			side="EMPTY";
-			vehicle="Land_BagFence_Short_F";
-			skill=0.60000002;
-			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
-		};
-		class Item52
-		{
-			position[]={21245.324,7.6705713,15235.857};
-			azimut=-90.508301;
-			id=72;
 			side="EMPTY";
 			vehicle="Land_BagFence_End_F";
 			skill=0.60000002;
 		};
+		class Item52
+		{
+			position[]={21243.309,7.5681114,15234.243};
+			azimut=179.255;
+			offsetY=-1;
+			id=72;
+			side="EMPTY";
+			vehicle="ShootingPos_F";
+			skill=0.60000002;
+			init="this setPos [getPos this select 0, getPos this select 1, -0.01]; this setVectorUp [0,0.1,1]; this setVectorUp surfaceNormal position this; ";
+		};
 		class Item53
 		{
-			position[]={21241.066,7.5648241,15234.338};
-			azimut=-90.508301;
+			position[]={21245.297,7.4442787,15232.782};
+			azimut=-90.794296;
 			id=73;
 			side="EMPTY";
-			vehicle="Land_BagFence_Short_F";
+			vehicle="Land_BagFence_Long_F";
 			skill=0.60000002;
 			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
 		};
 		class Item54
 		{
-			position[]={21241.066,7.383585,15232.399};
-			azimut=-90.508301;
+			position[]={21245.264,7.6741161,15235.879};
+			azimut=-90.794296;
 			id=74;
 			side="EMPTY";
-			vehicle="Land_BagFence_Short_F";
+			vehicle="Land_BagFence_Long_F";
 			skill=0.60000002;
 			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
 		};
 		class Item55
 		{
-			position[]={21241.059,7.7083106,15235.897};
+			position[]={21241.186,7.8822422,15237.781};
 			azimut=-90.508301;
 			id=75;
 			side="EMPTY";
@@ -1098,7 +1102,7 @@ class Mission
 		};
 		class Item56
 		{
-			position[]={21251.496,7.5524306,15233.586};
+			position[]={21239.24,7.5934958,15234.206};
 			azimut=179.255;
 			offsetY=-1;
 			id=76;
@@ -1109,27 +1113,27 @@ class Mission
 		};
 		class Item57
 		{
-			position[]={21241.066,7.5648241,15234.338};
-			azimut=-90.508301;
+			position[]={21241.229,7.41922,15232.745};
+			azimut=-90.794296;
 			id=77;
 			side="EMPTY";
-			vehicle="Land_BagFence_Short_F";
+			vehicle="Land_BagFence_Long_F";
 			skill=0.60000002;
 			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
 		};
 		class Item58
 		{
-			position[]={21241.066,7.383585,15232.399};
-			azimut=-90.508301;
+			position[]={21241.195,7.7038951,15235.842};
+			azimut=-90.794296;
 			id=78;
 			side="EMPTY";
-			vehicle="Land_BagFence_Short_F";
+			vehicle="Land_BagFence_Long_F";
 			skill=0.60000002;
 			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
 		};
 		class Item59
 		{
-			position[]={21241.059,7.7083106,15235.897};
+			position[]={21237.189,8.0408621,15237.701};
 			azimut=-90.508301;
 			id=79;
 			side="EMPTY";
@@ -1138,7 +1142,7 @@ class Mission
 		};
 		class Item60
 		{
-			position[]={21243.234,7.5034447,15233.545};
+			position[]={21235.244,7.7145376,15234.126};
 			azimut=179.255;
 			offsetY=-1;
 			id=80;
@@ -1149,221 +1153,430 @@ class Mission
 		};
 		class Item61
 		{
-			position[]={21212.553,8.0674915,15232.604};
-			azimut=-90.508301;
+			position[]={21237.232,7.4778333,15232.665};
+			azimut=-90.794296;
 			id=81;
 			side="EMPTY";
-			vehicle="Land_BagFence_Short_F";
+			vehicle="Land_BagFence_Long_F";
 			skill=0.60000002;
 			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
 		};
 		class Item62
 		{
-			position[]={21212.545,8.6312256,15236.103};
-			azimut=-90.508301;
+			position[]={21237.199,7.8619041,15235.762};
+			azimut=-90.794296;
 			id=82;
+			side="EMPTY";
+			vehicle="Land_BagFence_Long_F";
+			skill=0.60000002;
+			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
+		};
+		class Item63
+		{
+			position[]={21233.156,8.2220459,15237.663};
+			azimut=-90.508301;
+			id=83;
 			side="EMPTY";
 			vehicle="Land_BagFence_End_F";
 			skill=0.60000002;
 		};
-		class Item63
+		class Item64
 		{
-			position[]={21212.553,8.3866825,15234.583};
-			azimut=-90.508301;
-			id=83;
+			position[]={21233.199,7.5697904,15232.627};
+			azimut=-90.794296;
+			id=84;
 			side="EMPTY";
-			vehicle="Land_BagFence_Short_F";
+			vehicle="Land_BagFence_Long_F";
 			skill=0.60000002;
 			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
 		};
-		class Item64
-		{
-			position[]={21202.543,8.0622587,15233.789};
-			azimut=179.255;
-			offsetY=-1;
-			id=84;
-			side="EMPTY";
-			vehicle="ShootingPos_F";
-			skill=0.60000002;
-			init="this setPos [getPos this select 0, getPos this select 1, -0.01]; this setVectorUp [0,0.1,1]; this setVectorUp surfaceNormal position this; ";
-		};
 		class Item65
 		{
-			position[]={21208.635,8.1804171,15234.581};
-			azimut=-90.508301;
+			position[]={21233.166,7.9710379,15235.724};
+			azimut=-90.794296;
 			id=85;
 			side="EMPTY";
-			vehicle="Land_BagFence_Short_F";
+			vehicle="Land_BagFence_Long_F";
 			skill=0.60000002;
 			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
 		};
 		class Item66
 		{
-			position[]={21208.635,7.8921337,15232.643};
-			azimut=-90.508301;
+			position[]={21268.297,8.2622366,15246.867};
+			azimut=-1.2553101;
 			id=86;
 			side="EMPTY";
-			vehicle="Land_BagFence_Short_F";
+			vehicle="CamoNet_INDP_F";
 			skill=0.60000002;
-			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
 		};
 		class Item67
 		{
-			position[]={21208.627,8.4319706,15236.142};
-			azimut=-90.508301;
+			position[]={21269.787,8.2588043,15247.037};
+			azimut=360.14453;
 			id=87;
 			side="EMPTY";
-			vehicle="Land_BagFence_End_F";
+			vehicle="Land_HBarrier_5_F";
 			skill=0.60000002;
 		};
 		class Item68
 		{
-			position[]={21210.607,8.12078,15233.787};
-			azimut=179.255;
-			offsetY=-1;
+			position[]={21284.188,9.1719027,15257.924};
+			azimut=179.80432;
 			id=88;
 			side="EMPTY";
-			vehicle="ShootingPos_F";
+			vehicle="Land_BagFence_End_F";
 			skill=0.60000002;
-			init="this setPos [getPos this select 0, getPos this select 1, -0.01]; this setVectorUp [0,0.1,1]; this setVectorUp surfaceNormal position this; ";
 		};
 		class Item69
 		{
-			position[]={21204.561,8.1659298,15234.542};
-			azimut=-90.508301;
+			position[]={21287.764,8.9869986,15255.958};
+			azimut=449.56799;
+			offsetY=-1;
 			id=89;
 			side="EMPTY";
-			vehicle="Land_BagFence_Short_F";
+			vehicle="ShootingPos_F";
 			skill=0.60000002;
-			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
+			init="this setPos [getPos this select 0, getPos this select 1, +0.1]; this setVectorUp [0,0.1,1]; this setVectorUp surfaceNormal position this; ";
 		};
 		class Item70
 		{
-			position[]={21204.561,7.8920021,15232.604};
-			azimut=-90.508301;
+			position[]={21289.215,9.2297163,15257.934};
+			azimut=179.51833;
 			id=90;
 			side="EMPTY";
-			vehicle="Land_BagFence_Short_F";
+			vehicle="Land_BagFence_Long_F";
 			skill=0.60000002;
 			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
 		};
 		class Item71
 		{
-			position[]={21204.553,8.3864288,15236.102};
-			azimut=-90.508301;
+			position[]={21286.125,9.1989737,15257.917};
+			azimut=179.51833;
 			id=91;
 			side="EMPTY";
-			vehicle="Land_BagFence_End_F";
+			vehicle="Land_BagFence_Long_F";
 			skill=0.60000002;
+			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
 		};
 		class Item72
 		{
-			position[]={21200.451,8.0798292,15234.501};
-			azimut=-90.508301;
+			position[]={21284.24,8.731144,15253.861};
+			azimut=179.80432;
 			id=92;
-			side="EMPTY";
-			vehicle="Land_BagFence_Short_F";
-			skill=0.60000002;
-			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
-		};
-		class Item73
-		{
-			position[]={21200.451,7.8730907,15232.563};
-			azimut=-90.508301;
-			id=93;
-			side="EMPTY";
-			vehicle="Land_BagFence_Short_F";
-			skill=0.60000002;
-			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
-		};
-		class Item74
-		{
-			position[]={21200.443,8.2983522,15236.061};
-			azimut=-90.508301;
-			id=94;
 			side="EMPTY";
 			vehicle="Land_BagFence_End_F";
 			skill=0.60000002;
 		};
+		class Item73
+		{
+			position[]={21287.799,8.5015907,15251.896};
+			azimut=449.56799;
+			offsetY=-1;
+			id=93;
+			side="EMPTY";
+			vehicle="ShootingPos_F";
+			skill=0.60000002;
+			init="this setPos [getPos this select 0, getPos this select 1, +0.1]; this setVectorUp [0,0.1,1]; this setVectorUp surfaceNormal position this; ";
+		};
+		class Item74
+		{
+			position[]={21289.268,8.749568,15253.855};
+			azimut=179.51833;
+			id=94;
+			side="EMPTY";
+			vehicle="Land_BagFence_Long_F";
+			skill=0.60000002;
+			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
+		};
 		class Item75
 		{
-			position[]={21196.186,8.0556831,15234.541};
-			azimut=-90.508301;
+			position[]={21286.186,8.7214794,15253.861};
+			azimut=179.51833;
 			id=95;
 			side="EMPTY";
-			vehicle="Land_BagFence_Short_F";
+			vehicle="Land_BagFence_Long_F";
 			skill=0.60000002;
 			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
 		};
 		class Item76
 		{
-			position[]={21196.186,7.8489451,15232.603};
-			azimut=-90.508301;
+			position[]={21284.258,8.3133831,15249.792};
+			azimut=179.80432;
 			id=96;
-			side="EMPTY";
-			vehicle="Land_BagFence_Short_F";
-			skill=0.60000002;
-			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
-		};
-		class Item77
-		{
-			position[]={21196.178,8.2220411,15236.101};
-			azimut=-90.508301;
-			id=97;
 			side="EMPTY";
 			vehicle="Land_BagFence_End_F";
 			skill=0.60000002;
 		};
-		class Item78
+		class Item77
 		{
-			position[]={21206.615,8.0568285,15233.789};
-			azimut=179.255;
+			position[]={21287.82,8.0830822,15247.822};
+			azimut=449.56799;
 			offsetY=-1;
-			id=98;
+			id=97;
 			side="EMPTY";
 			vehicle="ShootingPos_F";
 			skill=0.60000002;
-			init="this setPos [getPos this select 0, getPos this select 1, -0.01]; this setVectorUp [0,0.1,1]; this setVectorUp surfaceNormal position this; ";
+			init="this setPos [getPos this select 0, getPos this select 1, +0.1]; this setVectorUp [0,0.1,1]; this setVectorUp surfaceNormal position this; ";
+		};
+		class Item78
+		{
+			position[]={21289.279,8.2716713,15249.811};
+			azimut=179.51833;
+			id=98;
+			side="EMPTY";
+			vehicle="Land_BagFence_Long_F";
+			skill=0.60000002;
+			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
 		};
 		class Item79
 		{
-			position[]={21196.186,8.0556831,15234.541};
-			azimut=-90.508301;
+			position[]={21286.197,8.3025875,15249.792};
+			azimut=179.51833;
 			id=99;
 			side="EMPTY";
-			vehicle="Land_BagFence_Short_F";
+			vehicle="Land_BagFence_Long_F";
 			skill=0.60000002;
 			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
 		};
 		class Item80
 		{
-			position[]={21196.186,7.8489451,15232.603};
-			azimut=-90.508301;
+			position[]={21284.311,8.0758858,15245.791};
+			azimut=179.80432;
 			id=100;
-			side="EMPTY";
-			vehicle="Land_BagFence_Short_F";
-			skill=0.60000002;
-			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
-		};
-		class Item81
-		{
-			position[]={21196.178,8.2220411,15236.101};
-			azimut=-90.508301;
-			id=101;
 			side="EMPTY";
 			vehicle="Land_BagFence_End_F";
 			skill=0.60000002;
 		};
-		class Item82
+		class Item81
 		{
-			position[]={21198.354,7.9855661,15233.748};
-			azimut=179.255;
+			position[]={21287.865,8.1591549,15243.822};
+			azimut=449.56799;
 			offsetY=-1;
-			id=102;
+			id=101;
 			side="EMPTY";
 			vehicle="ShootingPos_F";
 			skill=0.60000002;
-			init="this setPos [getPos this select 0, getPos this select 1, -0.01]; this setVectorUp [0,0.1,1]; this setVectorUp surfaceNormal position this; ";
+			init="this setPos [getPos this select 0, getPos this select 1, +0.05]; this setVectorUp [0,0.1,1]; this setVectorUp surfaceNormal position this;  ";
+		};
+		class Item82
+		{
+			position[]={21289.348,8.0997763,15245.788};
+			azimut=179.51833;
+			id=102;
+			side="EMPTY";
+			vehicle="Land_BagFence_Long_F";
+			skill=0.60000002;
+			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
+		};
+		class Item83
+		{
+			position[]={21286.244,8.1142311,15245.78};
+			azimut=179.51833;
+			id=103;
+			side="EMPTY";
+			vehicle="Land_BagFence_Long_F";
+			skill=0.60000002;
+			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
+		};
+		class Item84
+		{
+			position[]={21284.344,8.0706015,15241.762};
+			azimut=179.80432;
+			id=104;
+			side="EMPTY";
+			vehicle="Land_BagFence_End_F";
+			skill=0.60000002;
+		};
+		class Item85
+		{
+			position[]={21289.373,8.2006569,15241.755};
+			azimut=179.51833;
+			id=105;
+			side="EMPTY";
+			vehicle="Land_BagFence_Long_F";
+			skill=0.60000002;
+			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
+		};
+		class Item86
+		{
+			position[]={21286.264,8.1094599,15241.759};
+			azimut=179.51833;
+			id=106;
+			side="EMPTY";
+			vehicle="Land_BagFence_Long_F";
+			skill=0.60000002;
+			init="this setPos [getPos this select 0, getPos this select 1, -0.1];this setVectorUp surfaceNormal position this; ";
+		};
+		class Item87
+		{
+			position[]={21279.84,9.1901016,15258.635};
+			azimut=450.65442;
+			id=107;
+			side="EMPTY";
+			vehicle="Land_HBarrier_5_F";
+			skill=0.60000002;
+		};
+		class Item88
+		{
+			position[]={21279.883,9.3338661,15260.11};
+			azimut=360.19681;
+			id=108;
+			side="EMPTY";
+			vehicle="Land_HBarrier_5_F";
+			skill=0.60000002;
+		};
+		class Item89
+		{
+			position[]={21285.586,9.44384,15260.071};
+			azimut=540.65961;
+			id=109;
+			side="EMPTY";
+			vehicle="Land_HBarrier_5_F";
+			skill=0.60000002;
+		};
+		class Item90
+		{
+			position[]={21390,0.96828079,15230.67};
+			azimut=449.56799;
+			offsetY=-1;
+			id=110;
+			side="EMPTY";
+			vehicle="TargetP_Zom_Acc1_F";
+			skill=0.60000002;
+			text="pop100_1";
+		};
+		class Item91
+		{
+			position[]={21390,10.352246,15242.017};
+			azimut=449.56799;
+			offsetY=-1;
+			id=111;
+			side="EMPTY";
+			vehicle="TargetP_Zom_Acc1_F";
+			skill=0.60000002;
+			text="pop100_2";
+		};
+		class Item92
+		{
+			position[]={21390,11.51742,15252.349};
+			azimut=449.56799;
+			offsetY=-1;
+			id=112;
+			side="EMPTY";
+			vehicle="TargetP_Zom_Acc1_F";
+			skill=0.60000002;
+			text="pop100_3";
+		};
+		class Item93
+		{
+			position[]={21390,12.519365,15263.339};
+			azimut=449.56799;
+			offsetY=-1;
+			id=113;
+			side="EMPTY";
+			vehicle="TargetP_Zom_Acc1_F";
+			skill=0.60000002;
+			text="pop100_4";
+		};
+		class Item94
+		{
+			position[]={21390,13.208608,15274.934};
+			azimut=449.56799;
+			offsetY=-1;
+			id=114;
+			side="EMPTY";
+			vehicle="TargetP_Zom_Acc1_F";
+			skill=0.60000002;
+			text="pop100_5";
+		};
+		class Item95
+		{
+			position[]={21444.236,10.302517,15220.647};
+			azimut=449.56799;
+			offsetY=-1;
+			id=115;
+			side="EMPTY";
+			vehicle="TargetP_Zom_Acc1_F";
+			skill=0.60000002;
+			text="pop150_1";
+		};
+		class Item96
+		{
+			position[]={21444.023,11.179399,15231.094};
+			azimut=449.56799;
+			offsetY=-1;
+			id=116;
+			side="EMPTY";
+			vehicle="TargetP_Zom_Acc1_F";
+			skill=0.60000002;
+			text="pop150_2";
+		};
+		class Item97
+		{
+			position[]={21443.814,12.653467,15244.925};
+			azimut=449.56799;
+			offsetY=-1;
+			id=117;
+			side="EMPTY";
+			vehicle="TargetP_Zom_Acc1_F";
+			skill=0.60000002;
+			text="pop150_3";
+		};
+		class Item98
+		{
+			position[]={21350.195,7.5713234,15230.789};
+			azimut=449.56799;
+			offsetY=-1;
+			id=118;
+			side="EMPTY";
+			vehicle="TargetP_Zom_Acc1_F";
+			skill=0.60000002;
+			text="pop50_1";
+			init="this animate[""terc"",0]; this addEventHandler [""hit"",(_this select 0) spawn TFRT_fnc_popupTargets];";
+		};
+		class Item99
+		{
+			position[]={21349.986,8.9013748,15243.228};
+			azimut=449.56799;
+			offsetY=-1;
+			id=119;
+			side="EMPTY";
+			vehicle="TargetP_Zom_Acc1_F";
+			skill=0.60000002;
+			text="pop50_2";
+		};
+		class Item100
+		{
+			position[]={21349.998,9.7737694,15251.896};
+			azimut=449.56799;
+			offsetY=-1;
+			id=120;
+			side="EMPTY";
+			vehicle="TargetP_Zom_Acc1_F";
+			skill=0.60000002;
+			text="pop50_3";
+		};
+		class Item101
+		{
+			position[]={21349.736,10.463578,15259.962};
+			azimut=449.56799;
+			offsetY=-1;
+			id=121;
+			side="EMPTY";
+			vehicle="TargetP_Zom_Acc1_F";
+			skill=0.60000002;
+			text="pop50_4";
+		};
+		class Item102
+		{
+			position[]={21349.656,10.947764,15267.118};
+			azimut=449.56799;
+			offsetY=-1;
+			id=122;
+			side="EMPTY";
+			vehicle="TargetP_Zom_Acc1_F";
+			skill=0.60000002;
+			text="pop50_5";
 		};
 	};
 	class Markers

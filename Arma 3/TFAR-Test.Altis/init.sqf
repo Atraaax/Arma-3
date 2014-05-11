@@ -1,0 +1,1 @@
+WEST setFriend [EAST, 1];

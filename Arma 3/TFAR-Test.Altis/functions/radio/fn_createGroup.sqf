@@ -29,6 +29,7 @@ for [{_x = 0}, {_x < 3}, {_x = _x + 1}] do {
 
 sleep 120;
 
+//delete group when killed
 if (!isNull _group) then {
 	{
 		deleteVehicle _x;
