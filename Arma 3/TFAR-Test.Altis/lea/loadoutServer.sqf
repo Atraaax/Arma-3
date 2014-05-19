@@ -481,6 +481,32 @@ if (count weapons bubba4 > 0) then {
 };
 };
 
+if (!isNil "bubba5") then {
+removeallweapons bubba5;
+removeallassigneditems bubba5;
+removeHeadgear bubba5;
+removeUniform bubba5;
+removeBackpack bubba5;
+removeVest bubba5;
+
+bubba5 addWeapon "H_Cap_grn";
+bubba5 addUniform "U_NikosAgedBody";
+clearItemCargoGlobal (uniformContainer bubba5);
+clearMagazineCargoGlobal (uniformContainer bubba5);
+clearWeaponCargoGlobal (uniformContainer bubba5);
+if (count weapons bubba5 > 0) then {
+  private['_type', '_muzzles'];
+  _type = ((weapons bubba5) select 0);
+  _muzzles = getArray(configFile >>"cfgWeapons">> _type >>"muzzles");
+  if (count _muzzles > 1) then {
+     bubba5 selectWeapon (_muzzles select 0);
+  }
+  else {
+     bubba5 selectWeapon _type;
+  };
+};
+};
+
 if (!isNil "V1") then {
 removeallweapons V1;
 removeallassigneditems V1;
