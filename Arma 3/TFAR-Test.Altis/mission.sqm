@@ -2453,8 +2453,8 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			name="trigStart";
-			expActiv="_trigstart = [1,1] spawn TFRT_fnc_hideArrows";
-			expDesactiv="_trigstart = [1,2] spawn TFRT_fnc_hideArrows";
+			expActiv="_trigstart = [1] spawn TFRT_fnc_race";
+			expDesactiv="";
 			class Effects
 			{
 			};
