@@ -1,3 +1,5 @@
+hint "test";
+sleep 3;
 /* 
 Rotate an object around each axis 
 By bapedibupa 

@@ -447,7 +447,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={3620.1807,9.8764591,13134.881};
+					position[]={3644.781,10.324397,13239.961};
 					azimut=744.19293;
 					id=15;
 					side="EAST";
@@ -585,7 +585,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=175;
+		items=166;
 		class Item0
 		{
 			position[]={20562.748,47.636295,20092.896};
@@ -2177,7 +2177,7 @@ class Mission
 		};
 		class Item160
 		{
-			position[]={3621.7017,9.8935795,13144.353};
+			position[]={3621.4033,9.8895998,13144.651};
 			azimut=726.18536;
 			offsetY=0.5;
 			id=182;
@@ -2239,114 +2239,6 @@ class Mission
 			vehicle="Sign_Arrow_Direction_Green_F";
 			skill=0.60000002;
 			init="this setVectorUp [0,1,0];this setVectorDir [0,0.5,0];";
-		};
-		class Item166
-		{
-			position[]={3628.5017,10.250335,13187.152};
-			azimut=724.09003;
-			offsetY=0.5;
-			id=188;
-			side="EMPTY";
-			vehicle="Sign_Arrow_Direction_Green_F";
-			skill=0.60000002;
-			text="m1c";
-			init="this setVectorUp [0,1,0];this setVectorDir [0,0.5,0]; this hideObject true;";
-		};
-		class Item167
-		{
-			position[]={3630.2729,10.232265,13186.729};
-			azimut=724.09003;
-			offsetY=0.5;
-			id=189;
-			side="EMPTY";
-			vehicle="Sign_Sphere25cm_F";
-			skill=0.60000002;
-			text="m1b";
-			init="this hideObject true;";
-		};
-		class Item168
-		{
-			position[]={3626.6074,10.266163,13187.443};
-			azimut=724.09003;
-			offsetY=0.5;
-			id=190;
-			side="EMPTY";
-			vehicle="Sign_Sphere25cm_F";
-			skill=0.60000002;
-			text="m1a";
-			init="this hideObject true;";
-		};
-		class Item169
-		{
-			position[]={3654.4495,10.618593,13262.17};
-			azimut=1012.12;
-			offsetY=0.5;
-			id=191;
-			side="EMPTY";
-			vehicle="Sign_Arrow_Direction_Green_F";
-			skill=0.60000002;
-			text="m2c";
-			init="this setVectorUp [0,1,0];this setVectorDir [0,0,0]; this hideObject true;";
-		};
-		class Item170
-		{
-			position[]={3653.8528,10.652327,13264.325};
-			azimut=1012.12;
-			offsetY=0.5;
-			id=192;
-			side="EMPTY";
-			vehicle="Sign_Sphere25cm_F";
-			skill=0.60000002;
-			text="m2b";
-			init="this hideObject true;";
-		};
-		class Item171
-		{
-			position[]={3655.8611,10.60945,13260.188};
-			azimut=1012.12;
-			offsetY=0.5;
-			id=193;
-			side="EMPTY";
-			vehicle="Sign_Sphere25cm_F";
-			skill=0.60000002;
-			text="m2a";
-			init="this hideObject true;";
-		};
-		class Item172
-		{
-			position[]={3484.8499,2.0417998,13361.944};
-			azimut=751.66998;
-			offsetY=0.5;
-			id=194;
-			side="EMPTY";
-			vehicle="Sign_Arrow_Direction_Green_F";
-			skill=0.60000002;
-			text="m3c";
-			init="this setVectorUp [0,1,0];this setVectorDir [0,0.5,0]; this hideObject true;";
-		};
-		class Item173
-		{
-			position[]={3484.2532,2.0489602,13364.1};
-			azimut=1012.12;
-			offsetY=0.5;
-			id=195;
-			side="EMPTY";
-			vehicle="Sign_Sphere25cm_F";
-			skill=0.60000002;
-			text="m3b";
-			init="this hideObject true;";
-		};
-		class Item174
-		{
-			position[]={3486.2615,2.024859,13359.963};
-			azimut=1012.12;
-			offsetY=0.5;
-			id=196;
-			side="EMPTY";
-			vehicle="Sign_Sphere25cm_F";
-			skill=0.60000002;
-			text="m3a";
-			init="this hideObject true;";
 		};
 	};
 	class Markers
@@ -2440,57 +2332,20 @@ class Mission
 	};
 	class Sensors
 	{
-		items=3;
+		items=1;
 		class Item0
 		{
-			position[]={3622.1675,9.901536,13144.323};
+			position[]={3649.2222,10.275708,13249.092};
 			a=6;
 			b=8;
-			angle=-352.76001;
+			angle=-155.70062;
 			rectangular=1;
 			activationBy="EAST";
 			repeating=1;
 			interruptable=1;
 			age="UNKNOWN";
 			name="trigStart";
-			expActiv="_trigstart = [1] spawn TFRT_fnc_race";
-			expDesactiv="";
-			class Effects
-			{
-			};
-		};
-		class Item1
-		{
-			position[]={3634.0701,10.291508,13201.62};
-			a=6;
-			b=8;
-			angle=-346.89499;
-			rectangular=1;
-			activationBy="EAST";
-			repeating=1;
-			interruptable=1;
-			age="UNKNOWN";
-			name="trig2";
-			expActiv="_trigstart = [2,1] spawn TFRT_fnc_hideArrows";
-			expDesactiv="_trigstart = [2,2] spawn TFRT_fnc_hideArrows";
-			class Effects
-			{
-			};
-		};
-		class Item2
-		{
-			position[]={3560.9961,2.696496,13289.92};
-			a=6;
-			b=8;
-			angle=-232.75264;
-			rectangular=1;
-			activationBy="EAST";
-			repeating=1;
-			interruptable=1;
-			age="UNKNOWN";
-			name="trig3";
-			expActiv="_trigstart = [3,1] spawn TFRT_fnc_hideArrows";
-			expDesactiv="_trigstart = [3,2] spawn TFRT_fnc_hideArrows";
+			expActiv="_nul = [1] spawn TFRT_fnc_race;";
 			class Effects
 			{
 			};
