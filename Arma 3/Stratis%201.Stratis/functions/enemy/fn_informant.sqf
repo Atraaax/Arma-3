@@ -1,4 +1,5 @@
 private ["_wp","_player","_position","_group","_pause","_air","_trigger","_wpArray","_wpHum","_wpPwn"];
+_vehicleArray = [];
 _air = markerPos "obj3";
 diag_log _air;
 //set waypoint for informant at player position
@@ -6,6 +7,8 @@ _player = [_this,0, objNull,[objNull]] call BIS_fnc_param;
 _position = position _player;
 _group = createGroup Civilian;
 [informant1] joinsilent _group;
+informant1 setCombatMode "BLUE";
+informant1 allowFleeing 0;
 [_group,_position,"CARELESS","NORMAL","MOVE",1] spawn ATR_fnc_createWaypoint;
 //informant conversation
 /*sleep 5;
@@ -51,3 +54,18 @@ _trig = ["evac",150,150,0,false,"BRAVO","PRESENT",false] call ATR_fnc_createTrig
 
 _trig setTriggerStatements ["this","[] call ATR_fnc_airFightVcl",""];
 
+
+waitUntil {sleep 1; _distance = (hum distance (getMarkerPos "humArr"));_distance < 1000}; 
+costia globalchat "Costia Papadopolous: They Coming!!!! Hide!! HIDE!!!!!!";
+[_group, [4291,2697,0],"CARELESS","FULL","MOVE",5] spawn ATR_fnc_createWaypoint;
+waitUntil {sleep 1, _distance = (hum distance informant1); _distance < 24}; 
+costia globalchat "Costia Papadopolous: Help! Get out me! Help!";
+[_group, [(position hum select 0)+2,(position hum select 1)-2,0],"CARELESS","FULL","GETIN",6] spawn ATR_fnc_createWaypoint;
+waitUntil {sleep 0.1, _distance = (Informant1 distance hum); _distance < 7}; 
+[Informant1] joinSilent (group hum);
+Informant1 assignAsCargo hum;
+[Informant1] orderGetIn true;
+waitUntil {sleep 1;informant1 in hum};
+_group = group informant1;
+[_group, getMarkerPos "humEvac","CARELESS","FULL","MOVE",4] spawn ATR_fnc_createWaypoint;
+_group setCurrentWaypoint [_group,4];

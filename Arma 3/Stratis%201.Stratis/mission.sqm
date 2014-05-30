@@ -653,7 +653,7 @@ class Mission
 						};
 						class Item1
 						{
-							value="Mission";
+							value="";
 							parentCls="ModuleCreateDiaryRecord_F";
 							typeName="Subject";
 						};
@@ -1899,7 +1899,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=26;
+		items=27;
 		class Item0
 		{
 			position[]={1987.3428,2.6239698,3521.5791};
@@ -2031,7 +2031,7 @@ class Mission
 		};
 		class Item18
 		{
-			position[]={4320.1362,-0.2899704,2382.2261};
+			position[]={4291.1743,-0.071332216,2441.1841};
 			name="hum";
 			type="Empty";
 		};
@@ -2043,7 +2043,7 @@ class Mission
 		};
 		class Item20
 		{
-			position[]={4285.8569,0,2631.8525};
+			position[]={4286.8911,0.0002045877,2602.8906};
 			name="humArr";
 			type="Empty";
 		};
@@ -2055,13 +2055,13 @@ class Mission
 		};
 		class Item22
 		{
-			position[]={4299.5181,0.10424751,2487.375};
+			position[]={4293.312,-0.077069737,2511.1655};
 			name="hum2";
 			type="Empty";
 		};
 		class Item23
 		{
-			position[]={4838.2588,0.010252923,2395.5493};
+			position[]={4769.4521,-0.073074788,2417.708};
 			name="cay";
 			type="Empty";
 		};
@@ -2073,8 +2073,14 @@ class Mission
 		};
 		class Item25
 		{
-			position[]={4308.3115,30.967413,2737.4624};
+			position[]={4324.8608,32.23093,2708.5005};
 			name="cayArr";
+			type="Empty";
+		};
+		class Item26
+		{
+			position[]={7939.8867,0.0035751164,126.54248};
+			name="humEvac";
 			type="Empty";
 		};
 	};
