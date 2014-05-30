@@ -17,7 +17,7 @@ switch (_car) do {
 
 //Spawn vehicle
 _vehicle = _vehicleType createVehicle(_spawn);
-
+_vehicle allowDamage false;
 //	case "offroad": {_vehicle = "b_g_offroad_01_f" createVehicle(_spawn)};
 //case "ifrit": {_vehicle = "o_mrap_02_f" createVehicle(_spawn);clearWeaponCargoGlobal _car;};
 //case "strider": {_vehicle = "I_MRAP_03_f" createVehicle(_spawn)};

@@ -1,31 +1,25 @@
 //script for race
-private ["_wpNumber","_start","_time","_arrowInfo","_aY","_aX","_aDir"];
+private ["_wpNum","_start","_time","_wpArray","_wpActive","_wpCoord","_counter"];
 
-_wpNumber = 0;
+_wpNum = 0;
 
-hint "3...";
-sleep 1;
-hint "2...";
-sleep 1;
-hint "1...";
-sleep 1;
+
 hint "Start!";
 //get starting time
 _start = diag_tickTime;
 
-_arrowInfo = [_wpNumber] call TFRT_fnc_raceCoords;
-_aX= _arrowInfo select 0;
-_aY= _arrowInfo select 1;
-_aDir= _arrowInfo select 2;
-
-[_aX,_aY,_aDir] spawn TFRT_fnc_hideArrows;
-
-
 //create first trigger
-[_wpNumber] call TFRT_fnc_raceTrigger;
+
+_wpArray = [] call TFRT_fnc_raceCoords;
+for [{_counter = 0},{_counter < count _wpArray},{_counter = _counter + 1}] do {
+	_wpActive = [_counter] call TFRT_fnc_raceTrigger;
+	waitUntil {isNull _wpActive};
+};
+
+//[_wpNum] spawn TFRT_fnc_raceTrigger;
 
 //wait for player to leave the area
-sleep (60);
+sleep 60;
 
 
 //wait until player reaches the finish line again

@@ -447,8 +447,8 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={3644.781,10.324397,13239.961};
-					azimut=744.19293;
+					position[]={3631.1287,10.146022,13104.865};
+					azimut=744.19299;
 					id=15;
 					side="EAST";
 					vehicle="O_Soldier_F";
@@ -585,7 +585,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=166;
+		items=172;
 		class Item0
 		{
 			position[]={20562.748,47.636295,20092.896};
@@ -2002,8 +2002,8 @@ class Mission
 		};
 		class Item141
 		{
-			position[]={3629.0352,9.9932747,13131.831};
-			azimut=-176.79486;
+			position[]={3624.575,9.9898767,13125.84};
+			azimut=-78.731895;
 			id=163;
 			side="EMPTY";
 			vehicle="Land_CncBarrier_F";
@@ -2240,6 +2240,66 @@ class Mission
 			skill=0.60000002;
 			init="this setVectorUp [0,1,0];this setVectorDir [0,0.5,0];";
 		};
+		class Item166
+		{
+			position[]={3630.2483,9.9722433,13139.89};
+			azimut=-444.56601;
+			id=188;
+			side="EMPTY";
+			vehicle="Land_BarGate_F";
+			skill=0.60000002;
+			text="bgFinal";
+			init="this allowDamage false;";
+		};
+		class Item167
+		{
+			position[]={3623.3052,9.931365,13131.979};
+			azimut=-357.01999;
+			id=189;
+			side="EMPTY";
+			vehicle="Land_BarGate_F";
+			skill=0.60000002;
+			text="bg1";
+			init="bg1 animate [""Door_1_rot"",0];this allowDamage false;";
+		};
+		class Item168
+		{
+			position[]={3624.1975,9.9120274,13140.979};
+			azimut=-357.01999;
+			id=190;
+			side="EMPTY";
+			vehicle="Land_BarGate_F";
+			skill=0.60000002;
+			text="bgStart";
+			init="bgStart animate [""Door_1_rot"",1];this allowDamage false;";
+		};
+		class Item169
+		{
+			position[]={3629.0352,9.9932747,13131.831};
+			azimut=-176.79486;
+			id=191;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_F";
+			skill=0.60000002;
+		};
+		class Item170
+		{
+			position[]={3625.4583,9.9611578,13130.699};
+			azimut=-79.70713;
+			id=192;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_F";
+			skill=0.60000002;
+		};
+		class Item171
+		{
+			position[]={3625.0022,9.974062,13128.244};
+			azimut=-80.337265;
+			id=193;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_F";
+			skill=0.60000002;
+		};
 	};
 	class Markers
 	{
@@ -2332,20 +2392,56 @@ class Mission
 	};
 	class Sensors
 	{
-		items=1;
+		items=3;
 		class Item0
 		{
-			position[]={3649.2222,10.275708,13249.092};
+			position[]={3623.186,9.9798861,13151.146};
 			a=6;
-			b=8;
-			angle=-155.70062;
+			b=6;
+			angle=-261.832;
 			rectangular=1;
 			activationBy="EAST";
-			repeating=1;
 			interruptable=1;
 			age="UNKNOWN";
 			name="trigStart";
 			expActiv="_nul = [1] spawn TFRT_fnc_race;";
+			class Effects
+			{
+			};
+		};
+		class Item1
+		{
+			position[]={3620.7932,9.8744116,13137.639};
+			a=6;
+			b=3;
+			angle=2.93589;
+			rectangular=1;
+			activationBy="EAST";
+			repeating=1;
+			timeoutMin=1;
+			timeoutMid=1;
+			timeoutMax=1;
+			age="UNKNOWN";
+			expActiv="_nil=[bg1,bgStart,1] spawn TFRT_fnc_barGate;hint ""Start!!!"";";
+			class Effects
+			{
+			};
+		};
+		class Item2
+		{
+			position[]={3619.1143,9.8970938,13129.72};
+			a=5.5;
+			b=2;
+			angle=4.3030801;
+			rectangular=1;
+			activationBy="EAST";
+			repeating=1;
+			timeoutMin=1;
+			timeoutMid=1;
+			timeoutMax=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expActiv="_nil=[bg1,bgStart,1] spawn TFRT_fnc_barGate";
 			class Effects
 			{
 			};

@@ -36,6 +36,7 @@ class CfgFunctions {
 			class raceCoords {};
 			class raceTrigger {};
 			class race {};
+			class barGate {};
 		};
 	};
 };
