@@ -1,4 +1,4 @@
-private ["_wp","_position","_group","_behaviour","_speed","_type","_index"];
+private ["_wp","_position","_group","_behaviour","_speed","_type","_index","_combat"];
 
 
 _group = [_this,0, grpNull,[grpNull]] call BIS_fnc_param;
@@ -8,7 +8,6 @@ _speed = [_this,3, "",[""]] call BIS_fnc_param;
 _type = [_this,4, "MOVE",[""]] call BIS_fnc_param;
 _index = [_this,5, 1,[0]] call BIS_fnc_param;
 //set waypoint for group
-hint format [":%1",_index];
 
 _wp = _group addwaypoint [_position,10,_index];
 _wp setWaypointSpeed _behaviour;

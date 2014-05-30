@@ -2,17 +2,22 @@
 
 _airblue = createGroup West;
 _airbluefight = createGroup West;
+_airredfight = createGroup EAST;
 _airhum = [getMarkerPos "evacHum",300,"B_Heli_Light_01_F",WEST] call bis_fnc_spawnVehicle;
 _airpwn1 = [getMarkerPos "evacpwn1",300,"B_Heli_Light_01_armed_F",WEST] call bis_fnc_spawnVehicle;
 _airpwn2 = [getMarkerPos "evacpwn2",300,"B_Heli_Light_01_armed_F",WEST] call bis_fnc_spawnVehicle;
+_aircay = [getMarkerPos "cay",300,"O_Heli_Attack_02_black_F",EAST] call bis_fnc_spawnVehicle;
+
 _hum = _airhum select 0;
 _pwn1 = _airpwn1 select 0;
 _pwn2 = _airpwn2 select 0;
+_cay = _aircay select 0;
 
 [(_airhum select 2)] joinSilent _airblue;
 [(_airpwn1 select 2)] joinSilent _airbluefight;
 [(_airpwn2 select 2)] joinSilent _airbluefight;
-_pwn1 allowDamage false;
+[(_aircay select 2)] joinSilent _airredfight;
 
-[_airblue,_airbluefight,_airhum,_airpwn1,_airpwn2] spawn ATR_fnc_airfightWP;
+
+[_airblue,_airbluefight, _airredfight,_airhum,_airpwn1,_airpwn2, _aircay] spawn ATR_fnc_airfightWP;
 

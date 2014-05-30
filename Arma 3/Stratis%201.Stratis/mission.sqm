@@ -1703,7 +1703,7 @@ class Mission
 				};
 				class Item5
 				{
-					position[]={4370.4346,227.09346,3824.8257};
+					position[]={4357.7612,226.05571,3792.3506};
 					class Effects
 					{
 					};
@@ -1899,7 +1899,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=21;
+		items=26;
 		class Item0
 		{
 			position[]={1987.3428,2.6239698,3521.5791};
@@ -2007,37 +2007,37 @@ class Mission
 		};
 		class Item14
 		{
-			position[]={5302.6709,-0.072276257,206.96582};
+			position[]={4223.4854,0.033875927,2274.8281};
 			name="evacPwn2";
 			type="Empty";
 		};
 		class Item15
 		{
-			position[]={5270.7686,0.085128486,196.44629};
+			position[]={4191.583,0.134029,2264.3086};
 			name="evacPwn1";
 			type="Empty";
 		};
 		class Item16
 		{
-			position[]={4319.8252,0,2605.7295};
+			position[]={4378.9253,-0.11311929,2394.6172};
 			name="pwn";
 			type="Empty";
 		};
 		class Item17
 		{
-			position[]={5286.5303,-0.16304721,202.11621};
+			position[]={4207.3447,-0.15978914,2269.9785};
 			name="evacHum";
 			type="Empty";
 		};
 		class Item18
 		{
-			position[]={4287.1182,0.0049363323,2595.5122};
+			position[]={4320.1362,-0.2899704,2382.2261};
 			name="hum";
 			type="Empty";
 		};
 		class Item19
 		{
-			position[]={4312.979,0,2634.022};
+			position[]={4316.1475,13.335296,2671.6465};
 			name="pwnArr";
 			type="Empty";
 		};
@@ -2045,6 +2045,36 @@ class Mission
 		{
 			position[]={4285.8569,0,2631.8525};
 			name="humArr";
+			type="Empty";
+		};
+		class Item21
+		{
+			position[]={4355.6001,-0.028626179,2501.8428};
+			name="pwn2";
+			type="Empty";
+		};
+		class Item22
+		{
+			position[]={4299.5181,0.10424751,2487.375};
+			name="hum2";
+			type="Empty";
+		};
+		class Item23
+		{
+			position[]={4838.2588,0.010252923,2395.5493};
+			name="cay";
+			type="Empty";
+		};
+		class Item24
+		{
+			position[]={4438.667,0.3171033,2256.6968};
+			name="cay1";
+			type="Empty";
+		};
+		class Item25
+		{
+			position[]={4308.3115,30.967413,2737.4624};
+			name="cayArr";
 			type="Empty";
 		};
 	};

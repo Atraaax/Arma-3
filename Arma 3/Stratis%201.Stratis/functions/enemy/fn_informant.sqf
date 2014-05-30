@@ -51,8 +51,3 @@ _trig = ["evac",150,150,0,false,"BRAVO","PRESENT",false] call ATR_fnc_createTrig
 
 _trig setTriggerStatements ["this","[] call ATR_fnc_airFightVcl",""];
 
-/*
-waitUntil {_hum distance (getMarkerPos "evac") < 150}; 
-    _hum setspeedMode "LIMITED";
-    _hum land "LAND";
-*/
