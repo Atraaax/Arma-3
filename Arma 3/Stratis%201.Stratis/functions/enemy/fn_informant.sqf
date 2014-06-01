@@ -65,6 +65,18 @@ _airpwn1 = _vehicles select 1;
 _airpwn2 = _vehicles select 2;
 _aircay = _vehicles select 3;
 
+//create groups
+_airblue = createGroup West;
+_airbluefight = createGroup West;
+_airredfight = createGroup EAST;
+
+
+//assign groups
+[(_airhum select 2)] joinSilent _airblue;
+[(_airpwn1 select 2)] joinSilent _airbluefight;
+[(_airpwn2 select 2)] joinSilent _airbluefight;
+[(_aircay select 2)] joinSilent _airredfight;
+
 //assign vehicle handles
 hum = _airhum select 0;
 _pwn1 = _airpwn1 select 0;
@@ -75,10 +87,10 @@ _pwn1 flyinHeight 50;
 _pwn2 flyinHeight 50;
 
 //combatModemode
-(driver hum) setCombatMode "BLUE";
-(driver _pwn1) setCombatMode "BLUE";
-(driver _pwn2) setCombatMode "BLUE";
-(driver _cay) setCombatMode "BLUE";
+_airblue setCombatMode "BLUE";
+(driver _pwn1) setCombatMode "RED";
+(driver _pwn2) setCombatMode "RED";
+(driver _cay) setCombatMode "RED";
 
 //waypoints for Hummingbird (extract)
 _wpH1 = (group Hum) addWaypoint [getMarkerPos "hum",0,1];
@@ -102,10 +114,60 @@ _wpH3 setWaypointType "MOVE";
 _wpH3 setWaypointCompletionRadius 10;
 _wpH3 setWaypointStatements ["true","(vehicle this) land ""Get In"""];
 
+_wpP1 = (_airbluefight) addWaypoint [getMarkerPos "pwn",0,1];
+_wpP1 setWaypointBehaviour "CARELESS";
+_wpP1 setWaypointSpeed "FULL";
+_wpP1 setWaypointType "MOVE";
+_wpP1 setWaypointCompletionRadius 20;
+_wpP1 setWaypointStatements ["true",""];
+   
+_wpP2 = (_airbluefight) addWaypoint [getMarkerPos "pwn2",0,2];
+_wpP2 setWaypointBehaviour "AWARE";
+_wpP2 setWaypointSpeed "FULL";
+_wpP2 setWaypointType "SAD";
+_wpP2 setWaypointCompletionRadius 20;
+_wpP2 setWaypointStatements ["true",""];
+   
+_wpP3 = (_airbluefight) addWaypoint [getMarkerPos "pwnArr",0,3];
+_wpP3 setWaypointBehaviour "COMBAT";
+_wpP3 setWaypointSpeed "NORMAL";
+_wpP3 setWaypointType "SAD";
+_wpP3 setWaypointCompletionRadius 20;
+_wpP3 setWaypointStatements ["true",""];
+
+_wpO1 = (_airredfight) addWaypoint [getMarkerPos "orc",0,1];
+_wpO1 setWaypointBehaviour "AWARE";
+_wpO1 setWaypointSpeed "NORMAL";
+_wpO1 setWaypointType "SAD";
+_wpO1 setWaypointCompletionRadius 20;
+_wpO1 setWaypointStatements ["true",""];
+   
+_wpO2 = (_airredfight) addWaypoint [getMarkerPos "orcArr",0,2];
+_wpO2 setWaypointBehaviour "AWARE";
+_wpO2 setWaypointSpeed "NORMAL";
+_wpO2 setWaypointType "SAD";
+_wpO2 setWaypointCompletionRadius 20;
+_wpO2 setWaypointStatements ["true",""];
+
 waitUntil {sleep 1; _distance = (hum distance (getMarkerPos "humArr"));_distance < 800}; 
 costia globalchat "Costia Papadopolous: They Coming!!!! Hide!! HIDE!!!!!!";
 _smoke = "SmokeShellGreen" createVehicle [4280,2677,1];
 [_group, [4291,2697,0],"CARELESS","FULL","MOVE",5] spawn ATR_fnc_createWaypoint;
+/*(_airbluefight) setCombatMode "RED";
+(_airbluefight) setCombatMode "RED";
+(_airredfight) setCombatMode "RED";*/
+
+(driver _pwn1) doTarget _cay;
+(driver _pwn2) doTarget _cay;
+(driver _cay) doTarget _pwn2;
+(driver _pwn1) doFire _cay;
+(driver _pwn2) doFire _cay;
+(driver _cay) doFire _pwn2;
+
+_cay setDamage 0.6;
+//waitUntil {sleep 0.5;if !alive _pwn2 then {(driver _cay) doTarget _pwn1;(driver _cay) doFire _pwn1;} else {(driver _cay) doTarget _pwn2;(driver _cay) doFire _pwn2;};(driver _pwn1) doTarget _cay;(driver _pwn2) doTarget _cay;(driver _pwn1) doFire _cay;(driver _pwn2) doFire _cay;!alive _cay};
+//(driver _pwn1) setCombatMode "BLUE";
+//(driver _pwn2) setCombatMode "BLUE";
 
 waitUntil {sleep 1, _distance = (hum distance informant1); _distance < 24}; 
 costia globalchat "Costia Papadopolous: Help! Get out me! Help!";
@@ -123,7 +185,7 @@ _wpH4 setWaypointBehaviour "CARELESS";
 _wpH4 setWaypointSpeed "FULL";
 _wpH4 setWaypointType "MOVE";
 _wpH4 setWaypointCompletionRadius 5;
-_wpH4 setWaypointStatements ["true",""];
+_wpH4 setWaypointStatements ["true","{deleteVehicle _x} forEach (crew hum); deleteVehicle hum"];
 
 
 
