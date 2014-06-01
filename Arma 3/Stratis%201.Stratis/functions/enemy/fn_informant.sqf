@@ -1,4 +1,4 @@
-private ["_wp","_player","_position","_group","_pause","_air","_trigger","_wpArray","_wpHum","_wpPwn"];
+private ["_wp","_player","_position","_group","_pause","_air","_trigger","_wpArray","_wpHum","_wpPwn","_vehicles","_airhum","_airpwn1","_airpwn2","_aircay","_pwn1","_pwn2","_cay"];
 _vehicleArray = [];
 _air = markerPos "obj3";
 diag_log _air;
@@ -49,23 +49,90 @@ sleep 3;
 [_group, [4280,2670,0],"CARELESS","FULL",4] spawn ATR_fnc_createWaypoint;
 ["airstation",_air,"ELLIPSE",100,100,"mil_circle","ColorRed","DiagGrid",""] call ATR_fnc_createMarker;
 sleep 10;*/
+
+//create trigger for airsupport
 hint "Airsupport available. Call evacuation via radio.";
 _trig = ["evac",150,150,0,false,"BRAVO","PRESENT",false] call ATR_fnc_createTrigger; //"_marker","_xRad","_yRad","_angle","_rect","_side","_detect","_repeat"
+_trig setTriggerStatements ["this","radioBravo=true",""];
 
-_trig setTriggerStatements ["this","[] call ATR_fnc_airFightVcl",""];
+//wair for airsupport
+waitUntil {radioBravo};
 
+//spawn vehicles and assign in handles
+_vehicles = [] call ATR_fnc_airFightVcl;
+_airhum = _vehicles select 0;
+_airpwn1 = _vehicles select 1;
+_airpwn2 = _vehicles select 2;
+_aircay = _vehicles select 3;
 
-waitUntil {sleep 1; _distance = (hum distance (getMarkerPos "humArr"));_distance < 1000}; 
+//assign vehicle handles
+hum = _airhum select 0;
+_pwn1 = _airpwn1 select 0;
+_pwn2 = _airpwn2 select 0;
+_cay = _aircay select 0;
+
+_pwn1 flyinHeight 50;
+_pwn2 flyinHeight 50;
+
+//combatModemode
+(driver hum) setCombatMode "BLUE";
+(driver _pwn1) setCombatMode "BLUE";
+(driver _pwn2) setCombatMode "BLUE";
+(driver _cay) setCombatMode "BLUE";
+
+//waypoints for Hummingbird (extract)
+_wpH1 = (group Hum) addWaypoint [getMarkerPos "hum",0,1];
+_wpH1 setWaypointBehaviour "CARELESS";
+_wpH1 setWaypointSpeed "FULL";
+_wpH1 setWaypointType "MOVE";
+_wpH1 setWaypointCompletionRadius 20;
+_wpH1 setWaypointStatements ["true",""];
+
+_wpH2 = (group Hum) addWaypoint [getMarkerPos "hum2",0,2];
+_wpH2 setWaypointBehaviour "CARELESS";
+_wpH2 setWaypointSpeed "NORMAL";
+_wpH2 setWaypointType "MOVE";
+_wpH2 setWaypointCompletionRadius 20;
+_wpH2 setWaypointStatements ["true",""];
+
+_wpH3 = (group Hum) addWaypoint [getMarkerPos "humArr",0,3];
+_wpH3 setWaypointBehaviour "CARELESS";
+_wpH3 setWaypointSpeed "LIMITED";
+_wpH3 setWaypointType "MOVE";
+_wpH3 setWaypointCompletionRadius 10;
+_wpH3 setWaypointStatements ["true","(vehicle this) land ""Get In"""];
+
+waitUntil {sleep 1; _distance = (hum distance (getMarkerPos "humArr"));_distance < 800}; 
 costia globalchat "Costia Papadopolous: They Coming!!!! Hide!! HIDE!!!!!!";
+_smoke = "SmokeShellGreen" createVehicle [4280,2677,1];
 [_group, [4291,2697,0],"CARELESS","FULL","MOVE",5] spawn ATR_fnc_createWaypoint;
+
 waitUntil {sleep 1, _distance = (hum distance informant1); _distance < 24}; 
 costia globalchat "Costia Papadopolous: Help! Get out me! Help!";
 [_group, [(position hum select 0)+2,(position hum select 1)-2,0],"CARELESS","FULL","GETIN",6] spawn ATR_fnc_createWaypoint;
+
 waitUntil {sleep 0.1, _distance = (Informant1 distance hum); _distance < 7}; 
-[Informant1] joinSilent (group hum);
+//[Informant1] joinSilent (group hum);
 Informant1 assignAsCargo hum;
 [Informant1] orderGetIn true;
+
+waitUntil {sleep 1;hint format ["bla:%1",(Currentwaypoint (group Hum))]; Informant1 in Hum};
+
+_wpH4 = (group Hum) addWaypoint [getMarkerPos "humEvac",0,4];
+_wpH4 setWaypointBehaviour "CARELESS";
+_wpH4 setWaypointSpeed "FULL";
+_wpH4 setWaypointType "MOVE";
+_wpH4 setWaypointCompletionRadius 5;
+_wpH4 setWaypointStatements ["true",""];
+
+
+
+
+
+
+
+/*
 waitUntil {sleep 1;informant1 in hum};
 _group = group informant1;
 [_group, getMarkerPos "humEvac","CARELESS","FULL","MOVE",4] spawn ATR_fnc_createWaypoint;
-_group setCurrentWaypoint [_group,4];
+_group setCurrentWaypoint [_group,4];*/
