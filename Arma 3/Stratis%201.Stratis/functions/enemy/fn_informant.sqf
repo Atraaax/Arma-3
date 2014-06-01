@@ -9,7 +9,13 @@ _group = createGroup Civilian;
 [informant1] joinsilent _group;
 informant1 setCombatMode "BLUE";
 informant1 allowFleeing 0;
-[_group,_position,"CARELESS","NORMAL","MOVE",1] spawn ATR_fnc_createWaypoint;
+
+_wpGr1 = _group addWaypoint [_position,0,1];
+_wpGr1 setWaypointBehaviour "CARELESS";
+_wpGr1 setWaypointSpeed "NORMAL";
+_wpGr1 setWaypointType "MOVE";
+_wpGr1 setWaypointCompletionRadius 1;
+_wpGr1 setWaypointStatements ["true",""];
 //informant conversation
 /*sleep 5;
 costia globalChat "Costia Papadopolous: Hey you! Over here!";
@@ -18,7 +24,12 @@ costia globalChat "Costia Papadopolous: But quiet! I think we not alone.";
 sleep 4;
 costia globalChat "Costia Papadopolous: You me promised safe get away!!";
 sleep 2;
-[_group, [4280,2670,0],"CARELESS","FULL","MOVE",2] spawn ATR_fnc_createWaypoint;
+_wpGr2 = _group addWaypoint [[4280,2670,0],0,2];
+_wpGr2 setWaypointBehaviour "CARELESS";
+_wpGr2 setWaypointSpeed "NORMAL";
+_wpGr2 setWaypointType "MOVE";
+_wpGr2 setWaypointCompletionRadius 1;
+_wpGr2 setWaypointStatements ["true",""];
 sleep 3;
 costia globalChat "Costia Papadopolous: Where boat? Where helicopter? We all die!! Where boat????";
 sleep 2;
@@ -30,8 +41,12 @@ sleep 4;
 costia globalChat "Costia Papadopolous: Soldier on Stratis much!! Much more than you!";
 sleep 4;
 costia globalChat "Costia Papadopolous: Where boat!";
-[_group, [4275,2674,0],"CARELESS","FULL","MOVE",3] spawn ATR_fnc_createWaypoint;
-sleep 2;
+_wpGr3 = _group addWaypoint [[4275,2674,0],0,3];
+_wpGr3 setWaypointBehaviour "CARELESS";
+_wpGr3 setWaypointSpeed "FULL";
+_wpGr3 setWaypointType "MOVE";
+_wpGr3 setWaypointCompletionRadius 1;
+_wpGr3 setWaypointStatements ["true",""];
 costia globalChat "Costia Papadopolous: Me go!! You no stay!";
 informant1 addaction ["Stay here! We'll call our support immediatly.",{costiaWait = 2;informant1 removeAction 1;},[],1,true,true,"","_this == player && player distance informant1 <= 4"];
 waituntil {sleep 0.1;costiaWait==2};
@@ -46,17 +61,89 @@ costia globalChat "Costia Papadopolous: I mark you map. Now boat. Me fear!";
 
 sleep 3;
 
-[_group, [4280,2670,0],"CARELESS","FULL",4] spawn ATR_fnc_createWaypoint;
+_wpGr4 = _group addWaypoint [[4280,2670,0],0,4];
+_wpGr4 setWaypointBehaviour "CARELESS";
+_wpGr4 setWaypointSpeed "FULL";
+_wpGr4 setWaypointType "MOVE";
+_wpGr4 setWaypointCompletionRadius 1;
+_wpGr4 setWaypointStatements ["true",""];
+
 ["airstation",_air,"ELLIPSE",100,100,"mil_circle","ColorRed","DiagGrid",""] call ATR_fnc_createMarker;
 sleep 10;*/
+/*
+	File: spawnGroup.sqf
+	Author: Joris-Jan van 't Land, modified by Thomas Ryan
+
+	Description:
+	Function which handles the spawning of a dynamic group of characters.
+	The composition of the group can be passed to the function.
+	Alternatively a number can be passed and the function will spawn that
+	amount of characters with a random type.
+
+	Parameter(s):
+	_this select 0: the group's starting position (Array)
+	_this select 1: the group's side (Side)
+	_this select 2: can be three different types:
+		- list of character types (Array)
+		- amount of characters (Number)
+		- CfgGroups entry (Config)
+	_this select 3: (optional) list of relative positions (Array)
+	_this select 4: (optional) list of ranks (Array)
+	_this select 5: (optional) skill range (Array)
+	_this select 6: (optional) ammunition count range (Array)
+	_this select 7: (optional) randomization controls (Array)
+		0: amount of mandatory units (Number)
+		1: spawn chance for the remaining units (Number)
+	_this select 8: (optional) azimuth (Number)
+
+	Returns:
+	The group (Group)
+*/
+
 
 //create trigger for airsupport
 hint "Airsupport available. Call evacuation via radio.";
 _trig = ["evac",150,150,0,false,"BRAVO","PRESENT",false] call ATR_fnc_createTrigger; //"_marker","_xRad","_yRad","_angle","_rect","_side","_detect","_repeat"
 _trig setTriggerStatements ["this","radioBravo=true",""];
 
-//wair for airsupport
+
+//wait for airsupport
 waitUntil {radioBravo};
+_enemy1 = [(getMarkerPos "enemy1"),EAST,(configfile >> "CfgGroups" >> "East" >> "OPF_F" >> "Infantry" >> "OIA_InfSquad_Weapons")] call bis_fnc_spawnGroup;
+
+_enemy1 setCombatMode "RED";
+_wpene1 = _enemy1 addWaypoint [getMarkerPos "obj2",0];
+_wpene1 setWaypointBehaviour "AWARE";
+_wpene1 setWaypointSpeed "SAD";
+_wpene1 setWaypointType "MOVE";
+_wpene1 setWaypointCompletionRadius 5;
+_wpene1 setWaypointStatements ["true",""];
+
+
+/*_wpene2 = _enemy1 addWaypoint [getMarkerPos "obj2",0];
+_wpene2 setWaypointBehaviour "AWARE";
+_wpene2 setWaypointSpeed "NORMAL";
+_wpene2 setWaypointType "SAD";
+_wpene2 setWaypointCompletionRadius 5;
+_wpene2 setWaypointStatements ["true",""];*/
+
+_enemy1 = [[4140,2853,0],EAST,8] call BIS_fnc_spawnGroup;
+_enemy1 setCombatMode "RED";
+_wpene1 = _enemy1 addWaypoint [[4277,2681,0],0];
+_wpene1 setWaypointBehaviour "AWARE";
+_wpene1 setWaypointSpeed "NORMAL";
+_wpene1 setWaypointType "MOVE";
+_wpene1 setWaypointCompletionRadius 5;
+_wpene1 setWaypointStatements ["true",""];
+
+
+_wpene2 = _enemy1 addWaypoint [[4277,2681,0],0];
+_wpene2 setWaypointBehaviour "AWARE";
+_wpene2 setWaypointSpeed "NORMAL";
+_wpene2 setWaypointType "SAD";
+_wpene2 setWaypointCompletionRadius 5;
+_wpene2 setWaypointStatements ["true",""];
+diag_log (waypoints _enemy1);
 
 //spawn vehicles and assign in handles
 _vehicles = [] call ATR_fnc_airFightVcl;
@@ -171,8 +258,13 @@ _cay setDamage 0.6;
 
 waitUntil {sleep 1, _distance = (hum distance informant1); _distance < 24}; 
 costia globalchat "Costia Papadopolous: Help! Get out me! Help!";
-[_group, [(position hum select 0)+2,(position hum select 1)-2,0],"CARELESS","FULL","GETIN",6] spawn ATR_fnc_createWaypoint;
 
+_wpGr5 = _group addWaypoint [[(position hum select 0)+2,(position hum select 1)-2],0,5];
+_wpGr5 setWaypointBehaviour "CARELESS";
+_wpGr5 setWaypointSpeed "FULL";
+_wpGr5 setWaypointType "MOVE";
+_wpGr5 setWaypointCompletionRadius 1;
+_wpGr5 setWaypointStatements ["true",""];
 waitUntil {sleep 0.1, _distance = (Informant1 distance hum); _distance < 7}; 
 //[Informant1] joinSilent (group hum);
 Informant1 assignAsCargo hum;

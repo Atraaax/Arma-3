@@ -1781,7 +1781,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={4278.1025,2.5179737,2679.7012};
+					position[]={4277.3828,3.1559033,2684.7368};
 					azimut=-701.49701;
 					id=55;
 					side="WEST";
@@ -1899,7 +1899,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=27;
+		items=28;
 		class Item0
 		{
 			position[]={1987.3428,2.6239698,3521.5791};
@@ -2086,6 +2086,12 @@ class Mission
 			name="humEvac";
 			type="Empty";
 		};
+		class Item27
+		{
+			position[]={4099.7954,62.876823,2922.6553};
+			name="enemy1";
+			type="Empty";
+		};
 	};
 	class Sensors
 	{
@@ -2193,7 +2199,7 @@ class Mission
 		};
 		class Item7
 		{
-			position[]={4283.2974,5.2338905,2695.1963};
+			position[]={4283.3813,5.4952135,2698.4028};
 			a=9;
 			b=12;
 			angle=-39.752701;

@@ -1,5 +1,5 @@
 if (isServer) then {call compile preprocessFile "scripts\locationlist.sqf";};
-
+_side = createCenter east;
 //precompile flightpath at mission start
 path = compile preprocessFile "scripts\path.sqf";
 path2 = compile preprocessFile "scripts\path2.sqf";

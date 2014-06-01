@@ -21,8 +21,5 @@ _pwn2 setSkill 1;
 
 
 
-
-//[_airblue,_airbluefight, _airredfight,_airhum,_airpwn1,_airpwn2, _aircay] spawn ATR_fnc_airfightWP;
-
 _vehicles = [_airhum,_airpwn1,_airpwn2,_aircay];
 _vehicles
