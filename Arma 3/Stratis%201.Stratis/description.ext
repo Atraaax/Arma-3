@@ -31,3 +31,16 @@ class CfgFunctions {
 	};
 };
 
+class CfgSounds
+{
+	sounds[] = {};
+	class hqRadio
+	{
+		// how the sound is referred to in the editor (e.g. trigger effects)
+		name = "hqObj2";
+		// filename, volume, pitch
+		sound[] = {"audio\hqobj2.ogg", 10, 1};
+		// subtitle delay in seconds, subtitle text 
+		titles[] = {1, "*enemy approaching from the west - aprox. 2 min - prepare yourself*"};
+	};
+};

@@ -17,7 +17,7 @@ _wpGr1 setWaypointType "MOVE";
 _wpGr1 setWaypointCompletionRadius 1;
 _wpGr1 setWaypointStatements ["true",""];
 //informant conversation
-/*sleep 5;
+sleep 5;
 costia globalChat "Costia Papadopolous: Hey you! Over here!";
 sleep 4;
 costia globalChat "Costia Papadopolous: But quiet! I think we not alone.";
@@ -69,106 +69,65 @@ _wpGr4 setWaypointCompletionRadius 1;
 _wpGr4 setWaypointStatements ["true",""];
 
 ["airstation",_air,"ELLIPSE",100,100,"mil_circle","ColorRed","DiagGrid",""] call ATR_fnc_createMarker;
-sleep 10;*/
-/*
-	File: spawnGroup.sqf
-	Author: Joris-Jan van 't Land, modified by Thomas Ryan
+sleep 10;
 
-	Description:
-	Function which handles the spawning of a dynamic group of characters.
-	The composition of the group can be passed to the function.
-	Alternatively a number can be passed and the function will spawn that
-	amount of characters with a random type.
-
-	Parameter(s):
-	_this select 0: the group's starting position (Array)
-	_this select 1: the group's side (Side)
-	_this select 2: can be three different types:
-		- list of character types (Array)
-		- amount of characters (Number)
-		- CfgGroups entry (Config)
-	_this select 3: (optional) list of relative positions (Array)
-	_this select 4: (optional) list of ranks (Array)
-	_this select 5: (optional) skill range (Array)
-	_this select 6: (optional) ammunition count range (Array)
-	_this select 7: (optional) randomization controls (Array)
-		0: amount of mandatory units (Number)
-		1: spawn chance for the remaining units (Number)
-	_this select 8: (optional) azimuth (Number)
-
-	Returns:
-	The group (Group)
-*/
 
 
 //create trigger for airsupport
-hint "Airsupport available. Call evacuation via radio.";
+/*hint "Airsupport available. Call evacuation via radio.";
 _trig = ["evac",150,150,0,false,"BRAVO","PRESENT",false] call ATR_fnc_createTrigger; //"_marker","_xRad","_yRad","_angle","_rect","_side","_detect","_repeat"
-_trig setTriggerStatements ["this","radioBravo=true",""];
+_trig setTriggerStatements ["this","radioBravo=true",""];*/
 
 
 //wait for airsupport
-waitUntil {radioBravo};
-_enemy1 = [(getMarkerPos "enemy1"),EAST,(configfile >> "CfgGroups" >> "East" >> "OPF_F" >> "Infantry" >> "OIA_InfSquad_Weapons")] call bis_fnc_spawnGroup;
+//waitUntil {radioBravo};
+hint "incoming radio message";
+playSound "hqRadio";
+waitUntil {sleep 120;true};
 
+_enemy1 = [(getMarkerPos "enemy1"),EAST,(configfile >> "CfgGroups" >> "East" >> "OPF_F" >> "Infantry" >> "OIA_InfSquad")] call bis_fnc_spawnGroup;
 _enemy1 setCombatMode "RED";
 _wpene1 = _enemy1 addWaypoint [getMarkerPos "obj2",0];
 _wpene1 setWaypointBehaviour "AWARE";
-_wpene1 setWaypointSpeed "SAD";
-_wpene1 setWaypointType "MOVE";
-_wpene1 setWaypointCompletionRadius 5;
-_wpene1 setWaypointStatements ["true",""];
-
-
-/*_wpene2 = _enemy1 addWaypoint [getMarkerPos "obj2",0];
-_wpene2 setWaypointBehaviour "AWARE";
-_wpene2 setWaypointSpeed "NORMAL";
-_wpene2 setWaypointType "SAD";
-_wpene2 setWaypointCompletionRadius 5;
-_wpene2 setWaypointStatements ["true",""];*/
-
-_enemy1 = [[4140,2853,0],EAST,8] call BIS_fnc_spawnGroup;
-_enemy1 setCombatMode "RED";
-_wpene1 = _enemy1 addWaypoint [[4277,2681,0],0];
-_wpene1 setWaypointBehaviour "AWARE";
 _wpene1 setWaypointSpeed "NORMAL";
-_wpene1 setWaypointType "MOVE";
+_wpene1 setWaypointType "SAD";
 _wpene1 setWaypointCompletionRadius 5;
 _wpene1 setWaypointStatements ["true",""];
 
 
-_wpene2 = _enemy1 addWaypoint [[4277,2681,0],0];
+_wpene2 = _enemy1 addWaypoint [getMarkerPos "obj2",0];
 _wpene2 setWaypointBehaviour "AWARE";
 _wpene2 setWaypointSpeed "NORMAL";
 _wpene2 setWaypointType "SAD";
 _wpene2 setWaypointCompletionRadius 5;
 _wpene2 setWaypointStatements ["true",""];
-diag_log (waypoints _enemy1);
+
 
 //spawn vehicles and assign in handles
+hint "heli spawn";
 _vehicles = [] call ATR_fnc_airFightVcl;
 _airhum = _vehicles select 0;
 _airpwn1 = _vehicles select 1;
 _airpwn2 = _vehicles select 2;
-_aircay = _vehicles select 3;
+//_aircay = _vehicles select 3;
 
 //create groups
 _airblue = createGroup West;
 _airbluefight = createGroup West;
-_airredfight = createGroup EAST;
+//_airredfight = createGroup EAST;
 
 
 //assign groups
 [(_airhum select 2)] joinSilent _airblue;
 [(_airpwn1 select 2)] joinSilent _airbluefight;
 [(_airpwn2 select 2)] joinSilent _airbluefight;
-[(_aircay select 2)] joinSilent _airredfight;
+//[(_aircay select 2)] joinSilent _airredfight;
 
 //assign vehicle handles
 hum = _airhum select 0;
 _pwn1 = _airpwn1 select 0;
 _pwn2 = _airpwn2 select 0;
-_cay = _aircay select 0;
+//_cay = _aircay select 0;
 
 _pwn1 flyinHeight 50;
 _pwn2 flyinHeight 50;
@@ -177,7 +136,7 @@ _pwn2 flyinHeight 50;
 _airblue setCombatMode "BLUE";
 (driver _pwn1) setCombatMode "RED";
 (driver _pwn2) setCombatMode "RED";
-(driver _cay) setCombatMode "RED";
+//(driver _cay) setCombatMode "RED";
 
 //waypoints for Hummingbird (extract)
 _wpH1 = (group Hum) addWaypoint [getMarkerPos "hum",0,1];
@@ -222,7 +181,7 @@ _wpP3 setWaypointType "SAD";
 _wpP3 setWaypointCompletionRadius 20;
 _wpP3 setWaypointStatements ["true",""];
 
-_wpO1 = (_airredfight) addWaypoint [getMarkerPos "orc",0,1];
+/*_wpO1 = (_airredfight) addWaypoint [getMarkerPos "orc",0,1];
 _wpO1 setWaypointBehaviour "AWARE";
 _wpO1 setWaypointSpeed "NORMAL";
 _wpO1 setWaypointType "SAD";
@@ -235,23 +194,24 @@ _wpO2 setWaypointSpeed "NORMAL";
 _wpO2 setWaypointType "SAD";
 _wpO2 setWaypointCompletionRadius 20;
 _wpO2 setWaypointStatements ["true",""];
-
-waitUntil {sleep 1; _distance = (hum distance (getMarkerPos "humArr"));_distance < 800}; 
+*/
+waitUntil {sleep 1; _distance = (leader _enemy1) distance (getMarkerPos "humArr");_distance < 150}; 
 costia globalchat "Costia Papadopolous: They Coming!!!! Hide!! HIDE!!!!!!";
+waitUntil {sleep 1; _distance = (hum distance (getMarkerPos "humArr"));_distance < 600}; 
 _smoke = "SmokeShellGreen" createVehicle [4280,2677,1];
 [_group, [4291,2697,0],"CARELESS","FULL","MOVE",5] spawn ATR_fnc_createWaypoint;
 /*(_airbluefight) setCombatMode "RED";
 (_airbluefight) setCombatMode "RED";
 (_airredfight) setCombatMode "RED";*/
 
-(driver _pwn1) doTarget _cay;
+/*(driver _pwn1) doTarget _cay;
 (driver _pwn2) doTarget _cay;
 (driver _cay) doTarget _pwn2;
 (driver _pwn1) doFire _cay;
 (driver _pwn2) doFire _cay;
 (driver _cay) doFire _pwn2;
 
-_cay setDamage 0.6;
+_cay setDamage 0.6;*/
 //waitUntil {sleep 0.5;if !alive _pwn2 then {(driver _cay) doTarget _pwn1;(driver _cay) doFire _pwn1;} else {(driver _cay) doTarget _pwn2;(driver _cay) doFire _pwn2;};(driver _pwn1) doTarget _cay;(driver _pwn2) doTarget _cay;(driver _pwn1) doFire _cay;(driver _pwn2) doFire _cay;!alive _cay};
 //(driver _pwn1) setCombatMode "BLUE";
 //(driver _pwn2) setCombatMode "BLUE";
