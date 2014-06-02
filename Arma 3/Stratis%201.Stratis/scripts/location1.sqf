@@ -32,3 +32,13 @@ clearWeaponCargo _object;
 clearMagazineCargo _object;
 _object addbackpackCargo ["tf_rt1523g",1];
 
+_pos = [4349.862793,3757.831055,0.46167];
+_object = createVehicle ["Land_CampingTable_F", _pos, [], 0, "CAN_COLLIDE"];
+_object setDir 310;
+_object setPosATL _pos;
+
+_pos = [4350.251953,3758.48291,1.23137];
+_object = createVehicle ["Item_B_UavTerminal", _pos, [], 0, "CAN_COLLIDE"];
+_object setDir 130;
+_object setPosATL _pos;
+

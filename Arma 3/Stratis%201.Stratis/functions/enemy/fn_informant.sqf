@@ -1,7 +1,8 @@
 private ["_wp","_player","_position","_group","_pause","_air","_trigger","_wpArray","_wpHum","_wpPwn","_vehicles","_airhum","_airpwn1","_airpwn2","_aircay","_pwn1","_pwn2","_cay"];
+
+
 _vehicleArray = [];
 _air = markerPos "obj3";
-diag_log _air;
 //set waypoint for informant at player position
 _player = [_this,0, objNull,[objNull]] call BIS_fnc_param;
 _position = position _player;
@@ -68,6 +69,7 @@ _wpGr4 setWaypointType "MOVE";
 _wpGr4 setWaypointCompletionRadius 1;
 _wpGr4 setWaypointStatements ["true",""];
 
+//marking of next mission
 ["airstation",_air,"ELLIPSE",100,100,"mil_circle","ColorRed","DiagGrid",""] call ATR_fnc_createMarker;
 sleep 10;
 
@@ -79,12 +81,16 @@ _trig = ["evac",150,150,0,false,"BRAVO","PRESENT",false] call ATR_fnc_createTrig
 _trig setTriggerStatements ["this","radioBravo=true",""];*/
 
 
+
+//play sound for incoming units
+
 //wait for airsupport
 //waitUntil {radioBravo};
 hint "incoming radio message";
 playSound "hqRadio";
-waitUntil {sleep 120;true};
+waitUntil {sleep 1;true};
 
+//spawn enemy unit
 _enemy1 = [(getMarkerPos "enemy1"),EAST,(configfile >> "CfgGroups" >> "East" >> "OPF_F" >> "Infantry" >> "OIA_InfSquad")] call bis_fnc_spawnGroup;
 _enemy1 setCombatMode "RED";
 _wpene1 = _enemy1 addWaypoint [getMarkerPos "obj2",0];
@@ -104,7 +110,6 @@ _wpene2 setWaypointStatements ["true",""];
 
 
 //spawn vehicles and assign in handles
-hint "heli spawn";
 _vehicles = [] call ATR_fnc_airFightVcl;
 _airhum = _vehicles select 0;
 _airpwn1 = _vehicles select 1;
@@ -151,7 +156,7 @@ _wpH2 setWaypointBehaviour "CARELESS";
 _wpH2 setWaypointSpeed "NORMAL";
 _wpH2 setWaypointType "MOVE";
 _wpH2 setWaypointCompletionRadius 20;
-_wpH2 setWaypointStatements ["true",""];
+_wpH2 setWaypointStatements ["(count units _enemy1) <= 2",""];
 
 _wpH3 = (group Hum) addWaypoint [getMarkerPos "humArr",0,3];
 _wpH3 setWaypointBehaviour "CARELESS";
@@ -195,11 +200,20 @@ _wpO2 setWaypointType "SAD";
 _wpO2 setWaypointCompletionRadius 20;
 _wpO2 setWaypointStatements ["true",""];
 */
-waitUntil {sleep 1; _distance = (leader _enemy1) distance (getMarkerPos "humArr");_distance < 150}; 
+
+//hiding of civilian unit
+//waitUntil {sleep 1; _distance = (leader _enemy1) distance (getMarkerPos "humArr");_distance < 150}; 
+_wpGr5 = _group addWaypoint [[4291,2697,0],0,5];
+_wpGr5 setWaypointBehaviour "CARELESS";
+_wpGr5 setWaypointSpeed "FULL";
+_wpGr5 setWaypointType "MOVE";
+_wpGr5 setWaypointCompletionRadius 1;
+_wpGr5 setWaypointStatements ["true",""];
 costia globalchat "Costia Papadopolous: They Coming!!!! Hide!! HIDE!!!!!!";
+
+waitUntil {sleep 1;(count units _enemy1)<=2};
 waitUntil {sleep 1; _distance = (hum distance (getMarkerPos "humArr"));_distance < 600}; 
 _smoke = "SmokeShellGreen" createVehicle [4280,2677,1];
-[_group, [4291,2697,0],"CARELESS","FULL","MOVE",5] spawn ATR_fnc_createWaypoint;
 /*(_airbluefight) setCombatMode "RED";
 (_airbluefight) setCombatMode "RED";
 (_airredfight) setCombatMode "RED";*/
@@ -212,19 +226,21 @@ _smoke = "SmokeShellGreen" createVehicle [4280,2677,1];
 (driver _cay) doFire _pwn2;
 
 _cay setDamage 0.6;*/
+
 //waitUntil {sleep 0.5;if !alive _pwn2 then {(driver _cay) doTarget _pwn1;(driver _cay) doFire _pwn1;} else {(driver _cay) doTarget _pwn2;(driver _cay) doFire _pwn2;};(driver _pwn1) doTarget _cay;(driver _pwn2) doTarget _cay;(driver _pwn1) doFire _cay;(driver _pwn2) doFire _cay;!alive _cay};
 //(driver _pwn1) setCombatMode "BLUE";
 //(driver _pwn2) setCombatMode "BLUE";
 
+//exertion of civilian unit
 waitUntil {sleep 1, _distance = (hum distance informant1); _distance < 24}; 
 costia globalchat "Costia Papadopolous: Help! Get out me! Help!";
 
-_wpGr5 = _group addWaypoint [[(position hum select 0)+2,(position hum select 1)-2],0,5];
-_wpGr5 setWaypointBehaviour "CARELESS";
-_wpGr5 setWaypointSpeed "FULL";
-_wpGr5 setWaypointType "MOVE";
-_wpGr5 setWaypointCompletionRadius 1;
-_wpGr5 setWaypointStatements ["true",""];
+_wpGr6 = _group addWaypoint [[(position hum select 0)+2,(position hum select 1)-2],0,6];
+_wpGr6 setWaypointBehaviour "CARELESS";
+_wpGr6 setWaypointSpeed "FULL";
+_wpGr6 setWaypointType "MOVE";
+_wpGr6 setWaypointCompletionRadius 1;
+_wpGr6 setWaypointStatements ["true",""];
 waitUntil {sleep 0.1, _distance = (Informant1 distance hum); _distance < 7}; 
 //[Informant1] joinSilent (group hum);
 Informant1 assignAsCargo hum;
