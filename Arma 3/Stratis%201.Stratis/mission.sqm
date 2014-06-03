@@ -1935,7 +1935,7 @@ class Mission
 						};
 						class Item3
 						{
-							value="Secure <marker name = obj3>Airstation Mike</marker>";
+							value="Secure <marker name = obj3>Airstation Mike</marker> and find any weapons the informant spoke of.<br />In addition gather any intelligence you can find about the CSAT troup movement.";
 							parentCls="ModuleTaskCreate_F";
 							typeName="Description";
 						};
@@ -2088,13 +2088,13 @@ class Mission
 						};
 						class Item2
 						{
-							value="Eliminate the complete force of Camp Maxwell";
+							value="Eliminate the complete force in Camp Maxwell";
 							parentCls="ModuleTaskCreate_F";
 							typeName="Title";
 						};
 						class Item3
 						{
-							value="";
+							value="The intel you found has been analyzed commander. You and your squad are lucky to be still alive.<br />According to this data a large force of CSAT troups is stationed in Camp Maxwell and it's count will be enlarged within the next hours.<br />This is our chance commander.<br /><br/>Within the stock list, found in the intel, we found 2 mortar batteries and a drone prototype.<br />Gather your squad, man the mortars and try to hit the enemy significantly with the laser guided shells. The drone might come handy in this case.<br />With a combined timed mortar and ground forces strike you might be able to eliminate the forces in Camp Maxwell and fortify our force in southern Stratis.<br />Commander! This will not be our last battle in this war. But it might be the turning point. The whole NATO looks upon you. Good luck Commander. May god be with us.";
 							parentCls="ModuleTaskCreate_F";
 							typeName="Description";
 						};
