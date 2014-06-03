@@ -1,5 +1,5 @@
 //standard values for tfar
-#include "\task_force_radio\functions\common.sqf";
+/*#include "\task_force_radio\functions\common.sqf";
 
 if ((isServer) or (isDedicated)) then {
     tf_no_auto_long_range_radio = true;
@@ -17,7 +17,7 @@ if ((isServer) or (isDedicated)) then {
      _settingsLrWest set [2, ["30","41","42","43","44","45","46","47","48"]];
      tf_freq_west_lr = _settingsLrWest;
 
-}; 
+}; */
 
 //itemspawn
 if (isServer) then {call compile preprocessFile "scripts\locationlist.sqf";};
