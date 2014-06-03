@@ -1,3 +1,4 @@
+tf_no_auto_long_range_radio = true;
 if (isServer) then {call compile preprocessFile "scripts\locationlist.sqf";};
 _side = createCenter east;
 //precompile flightpath at mission start
