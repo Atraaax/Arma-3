@@ -186,7 +186,7 @@ class Mission
 					skill=0.60000002;
 					text="g2";
 					init="this moveinCargo heliStart;this call X39_MedSys_fnc_InitializeUnit;";
-					description="Machinegunner";
+					description="Rifleman";
 					syncId=6;
 					synchronizations[]={14};
 				};
